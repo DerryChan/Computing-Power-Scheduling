@@ -1,26 +1,11 @@
+.DS_Store
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-env/
 .env
-*.log
-outputs/
-qa_*/
-*.pdf
-*.zip
-
-# ignore loose docs at repo root, but keep reports/
-/*.docx
-!reports/
-!reports/**
-
-# secrets / local
-**/重庆测试服务器资源*.md
-**/*密码*
-**/.env
+.local/
 **/*.pem
 **/*token*
-.DS_Store
-__pycache__/
-*.pyc
+*.log
+.qa_*/

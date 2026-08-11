@@ -1,0 +1,366 @@
+{
+  "test_mode": "local_deterministic_simulation",
+  "execution_date": "2026-08-06",
+  "reference_script": "https://github.com/derry-cheng/test/blob/main/scheduler_simulation_improved.py",
+  "reference_commit": "b18138d88098f4a5db31f09c81e57e451fd79377",
+  "resource_boundary": {
+    "海南": "RTX 4090 24GB x2",
+    "重庆": "RTX 4070 12GB x4",
+    "OTN": "100 Mbit/s (modeled)"
+  },
+  "input_sha256": "939ac769d7910bf51b920c47b5bd912a1cabb68b42a95151ed68820c560df6e2",
+  "case_counts": {
+    "PASS-SIM": 31,
+    "NOT-RUN": 3,
+    "NOT-APPLICABLE": 2
+  },
+  "case_catalog": [
+    "TC01",
+    "TC02",
+    "TC03",
+    "TC04",
+    "TC05",
+    "TC06",
+    "TC07",
+    "TC08",
+    "TC09",
+    "TC10",
+    "TC11",
+    "TC12",
+    "TC13",
+    "TC14",
+    "TC15",
+    "TC16",
+    "TC17",
+    "TC18",
+    "TC19",
+    "TC20",
+    "TC21",
+    "TC22",
+    "TC23",
+    "TC24",
+    "TC25",
+    "TC26",
+    "TC27",
+    "TC28",
+    "TC29",
+    "TC30",
+    "DT01",
+    "DT02",
+    "DT03",
+    "DT04",
+    "DT05",
+    "DT06"
+  ],
+  "dt01": {
+    "rounds": [
+      {
+        "parent_id": "POC-IMG-DUAL-001",
+        "shard_count": 8,
+        "success_shards": 8,
+        "regions": [
+          "海南",
+          "重庆"
+        ],
+        "samples": 4096,
+        "unique_samples": 4096,
+        "duplicate_samples": 0,
+        "missing_samples": 0,
+        "result_hashes_present": 8,
+        "reference_mismatch": 0,
+        "parent_status": "SUCCEEDED"
+      },
+      {
+        "parent_id": "POC-IMG-DUAL-002",
+        "shard_count": 8,
+        "success_shards": 8,
+        "regions": [
+          "海南",
+          "重庆"
+        ],
+        "samples": 4096,
+        "unique_samples": 4096,
+        "duplicate_samples": 0,
+        "missing_samples": 0,
+        "result_hashes_present": 8,
+        "reference_mismatch": 0,
+        "parent_status": "SUCCEEDED"
+      },
+      {
+        "parent_id": "POC-IMG-DUAL-003",
+        "shard_count": 8,
+        "success_shards": 8,
+        "regions": [
+          "海南",
+          "重庆"
+        ],
+        "samples": 4096,
+        "unique_samples": 4096,
+        "duplicate_samples": 0,
+        "missing_samples": 0,
+        "result_hashes_present": 8,
+        "reference_mismatch": 0,
+        "parent_status": "SUCCEEDED"
+      }
+    ]
+  },
+  "dt02": {
+    "normal": {
+      "task_id": "DT02-HN-FIRST",
+      "selected_region": "海南",
+      "gpu_id": "海南-GPU1",
+      "mode": "海南优先",
+      "accepted": [
+        "海南",
+        "重庆"
+      ],
+      "rejected": [],
+      "reason": "满足硬约束，命中海南优先规则",
+      "status": "SCHEDULED"
+    },
+    "diverted": {
+      "task_id": "DT02-DIVERT",
+      "selected_region": "重庆",
+      "gpu_id": "重庆-GPU1",
+      "mode": "海南优先",
+      "accepted": [
+        "重庆"
+      ],
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "单卡可用显存不足"
+        }
+      ],
+      "reason": "延迟、成本、能耗和负载归一化加权得分最低",
+      "status": "SCHEDULED"
+    },
+    "reserved_gpus": [
+      "海南-GPU1",
+      "海南-GPU2"
+    ]
+  },
+  "dt03": {
+    "online": {
+      "task_id": "DT03-16GB",
+      "selected_region": "海南",
+      "gpu_id": "海南-GPU1",
+      "mode": "海南优先",
+      "accepted": [
+        "海南"
+      ],
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "单卡可用显存不足"
+        }
+      ],
+      "reason": "满足硬约束，命中海南优先规则",
+      "status": "SCHEDULED"
+    },
+    "hainan_offline": {
+      "task_id": "DT03-16GB-OFF",
+      "selected_region": null,
+      "mode": "海南优先",
+      "accepted": [],
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "节点不健康"
+        },
+        {
+          "region": "重庆",
+          "reason": "单卡可用显存不足"
+        }
+      ],
+      "reason": "无满足硬约束的候选节点",
+      "status": "UNSCHEDULED"
+    }
+  },
+  "dt04": {
+    "initial": {
+      "parent_id": "DT04-PARENT",
+      "shard_count": 8,
+      "success_shards": 8,
+      "regions": [
+        "海南",
+        "重庆"
+      ],
+      "samples": 4096,
+      "unique_samples": 4096,
+      "duplicate_samples": 0,
+      "missing_samples": 0,
+      "result_hashes_present": 8,
+      "reference_mismatch": 0,
+      "parent_status": "SUCCEEDED"
+    },
+    "retry": {
+      "parent_id": "DT04-PARENT",
+      "child_id": "DT04-PARENT-S05-RETRY",
+      "shard_id": 5,
+      "status": "RETRY-SUCCEEDED",
+      "selected_region": "海南",
+      "reason": "满足硬约束，命中海南优先规则",
+      "link_state": "OTN_DOWN"
+    },
+    "failed": {
+      "parent_id": "DT04-PARENT",
+      "child_id": "DT04-PARENT-S03",
+      "shard_id": 3,
+      "status": "FAILED-LINK",
+      "selected_region": "重庆",
+      "reason": "运行中检测到OTN链路中断",
+      "link_state": "OTN_DOWN"
+    }
+  },
+  "dt05": {
+    "summary_a": {
+      "parent_id": "DT05-A",
+      "shard_count": 8,
+      "success_shards": 8,
+      "regions": [
+        "海南",
+        "重庆"
+      ],
+      "samples": 4096,
+      "unique_samples": 4096,
+      "duplicate_samples": 0,
+      "missing_samples": 0,
+      "result_hashes_present": 8,
+      "reference_mismatch": 0,
+      "parent_status": "SUCCEEDED"
+    },
+    "summary_b": {
+      "parent_id": "DT05-B",
+      "shard_count": 8,
+      "success_shards": 8,
+      "regions": [
+        "海南",
+        "重庆"
+      ],
+      "samples": 4096,
+      "unique_samples": 4096,
+      "duplicate_samples": 0,
+      "missing_samples": 0,
+      "result_hashes_present": 8,
+      "reference_mismatch": 0,
+      "parent_status": "SUCCEEDED"
+    },
+    "sha_a": "a721035f75ec2466612fe74a2b7de81e4e386ddaa7c87f74717a52d98703cb81",
+    "sha_b": "510c3ced9658fc7fb0f28ef4c276b9de4d27049209b4367b59dbac3c55bb9895",
+    "cleanup": {
+      "DT05-A": [
+        "input",
+        "intermediate",
+        "temporary_container",
+        "nonessential_cache"
+      ],
+      "DT05-B": [
+        "input",
+        "intermediate",
+        "temporary_container",
+        "nonessential_cache"
+      ]
+    }
+  },
+  "isolation": {
+    "unique_task_keys": true,
+    "audit_required_fields": [
+      "task_id",
+      "stage",
+      "timestamp",
+      "region",
+      "status",
+      "reason"
+    ]
+  },
+  "stability": {
+    "virtual_hours": 24,
+    "tasks": 192,
+    "succeeded": 192,
+    "success_rate_pct": 100.0,
+    "status_lost": 0,
+    "data_mismatch": 0,
+    "simulation_wall_clock_note": "加速仿真，不等价于真实服务器连续运行24小时"
+  },
+  "strategy_metrics": [
+    {
+      "algorithm": "静态本地",
+      "total_tasks": 60,
+      "successful_tasks": 53,
+      "unscheduled_tasks": 7,
+      "success_rate_pct": 88.33,
+      "avg_latency_ms": 41.86,
+      "avg_cost": 18.7,
+      "total_cost": 990.98,
+      "avg_energy_index": 2.33,
+      "gpu_util_proxy_pct": 10.02
+    },
+    {
+      "algorithm": "先到先服务",
+      "total_tasks": 60,
+      "successful_tasks": 60,
+      "unscheduled_tasks": 0,
+      "success_rate_pct": 100.0,
+      "avg_latency_ms": 33.23,
+      "avg_cost": 20.57,
+      "total_cost": 1234.31,
+      "avg_energy_index": 1.65,
+      "gpu_util_proxy_pct": 10.8
+    },
+    {
+      "algorithm": "海南优先",
+      "total_tasks": 60,
+      "successful_tasks": 60,
+      "unscheduled_tasks": 0,
+      "success_rate_pct": 100.0,
+      "avg_latency_ms": 33.23,
+      "avg_cost": 20.57,
+      "total_cost": 1234.31,
+      "avg_energy_index": 1.65,
+      "gpu_util_proxy_pct": 10.8
+    },
+    {
+      "algorithm": "最小延迟",
+      "total_tasks": 60,
+      "successful_tasks": 60,
+      "unscheduled_tasks": 0,
+      "success_rate_pct": 100.0,
+      "avg_latency_ms": 33.23,
+      "avg_cost": 20.57,
+      "total_cost": 1234.31,
+      "avg_energy_index": 1.65,
+      "gpu_util_proxy_pct": 10.8
+    },
+    {
+      "algorithm": "最小成本",
+      "total_tasks": 60,
+      "successful_tasks": 60,
+      "unscheduled_tasks": 0,
+      "success_rate_pct": 100.0,
+      "avg_latency_ms": 48.9,
+      "avg_cost": 17.29,
+      "total_cost": 1037.62,
+      "avg_energy_index": 2.96,
+      "gpu_util_proxy_pct": 10.8
+    },
+    {
+      "algorithm": "加权平均",
+      "total_tasks": 60,
+      "successful_tasks": 60,
+      "unscheduled_tasks": 0,
+      "success_rate_pct": 100.0,
+      "avg_latency_ms": 33.23,
+      "avg_cost": 20.57,
+      "total_cost": 1234.31,
+      "avg_energy_index": 1.65,
+      "gpu_util_proxy_pct": 10.8
+    }
+  ],
+  "limitations": [
+    "未连接真实服务器、VPN、OTN、调度控制面或节点代理。",
+    "网络吞吐、时延、丢包、抖动、GPU实际利用率和真实24小时稳定性未测量。",
+    "合成任务结果用于验证任务编排、结果键和哈希逻辑，不代表ResNet-50业务精度。",
+    "现场验收仍需按方案补齐未执行用例和证据截图。"
+  ]
+}

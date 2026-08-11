@@ -1,0 +1,3 @@
+﻿task_id,condition,selected_region,reason
+DT02-HN-FIRST,两地空闲,海南,满足硬约束，命中海南优先规则
+DT02-DIVERT,海南每卡预占20GB,重庆,延迟、成本、能耗和负载归一化加权得分最低

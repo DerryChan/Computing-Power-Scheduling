@@ -1,0 +1,33 @@
+{
+  "case_id": "TC24",
+  "title": "新加坡—海南VPN中断",
+  "level": "A",
+  "status": "NOT-RUN",
+  "evidence": "case_evidence/TC24.json",
+  "detail": "资源说明只提供登录资源，未提供可控VPN链路和调度端点。",
+  "metrics": "",
+  "parent_task_id": "TC24-PARENT",
+  "child_task_id": "现场待填",
+  "execution_time": "现场待执行",
+  "preconditions": "现场待确认：真实账号、节点代理、VPN/OTN、调度API或条件镜像",
+  "input_files": "现场冻结清单待填",
+  "input_sha256": "现场待填",
+  "shards": "NOT_APPLICABLE",
+  "candidate_set": "现场待采集",
+  "selection_reason": "现场待记录",
+  "execution_node": "现场待执行",
+  "gpu_id": "现场待记录",
+  "actual_outputs": "现场待生成",
+  "missing_samples": "现场待填",
+  "duplicate_samples": "现场待填",
+  "log_evidence": "现场待生成",
+  "issue_id": "现场待填",
+  "retry_relation": "现场待填",
+  "cleanup_record": "现场待填",
+  "test_conclusion": "NOT-RUN: 资源说明只提供登录资源，未提供可控VPN链路和调度端点。",
+  "coverage_source": "direct:TC24",
+  "supporting_files": [
+    "case_evidence/TC24.json"
+  ],
+  "evidence_note": "PASS-SIM为本地确定性仿真证据；NOT-RUN/NOT-APPLICABLE不构成现场通过。"
+}

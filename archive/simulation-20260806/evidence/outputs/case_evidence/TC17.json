@@ -1,0 +1,33 @@
+{
+  "case_id": "TC17",
+  "title": "任务取消",
+  "level": "B",
+  "status": "PASS-SIM",
+  "evidence": "case_evidence/TC17.json",
+  "detail": "模拟排队中和运行中任务均进入CANCELLED，后续不再产生成功执行记录；实际取消接口和容器终止仍待现场复测。",
+  "metrics": "queued_cancelled=1; running_cancelled=1",
+  "parent_task_id": "TC17-PARENT",
+  "child_task_id": "TC17-S01",
+  "execution_time": "2026-08-06T10:00:00+08:00 (simulation)",
+  "preconditions": "确定性合成输入、冻结镜像摘要、仿真节点资源已加载",
+  "input_files": "dataset-140m.tar.gz; manifest.csv; manifest_part-01..08.csv",
+  "input_sha256": "939ac769d7910bf51b920c47b5bd912a1cabb68b42a95151ed68820c560df6e2",
+  "shards": "NOT_APPLICABLE",
+  "candidate_set": "海南/重庆；按健康、链路、镜像、兼容性和单卡显存过滤",
+  "selection_reason": "模拟排队中和运行中任务均进入CANCELLED，后续不再产生成功执行记录；实际取消接口和容器终止仍待现场复测。",
+  "execution_node": "海南/重庆（仿真）",
+  "gpu_id": "海南-GPU1/重庆-GPU1（仿真）",
+  "actual_outputs": "分片结果、结果哈希、状态记录和用例证据JSON",
+  "missing_samples": "NOT_APPLICABLE",
+  "duplicate_samples": "NOT_APPLICABLE",
+  "log_evidence": "case_evidence/TC17.json; audit_log.jsonl",
+  "issue_id": "NONE",
+  "retry_relation": "NONE",
+  "cleanup_record": "case_evidence/TC17.json: cleanup_status=SIMULATED",
+  "test_conclusion": "PASS-SIM: 模拟排队中和运行中任务均进入CANCELLED，后续不再产生成功执行记录；实际取消接口和容器终止仍待现场复测。",
+  "coverage_source": "direct:TC17",
+  "supporting_files": [
+    "case_evidence/TC17.json"
+  ],
+  "evidence_note": "PASS-SIM为本地确定性仿真证据；NOT-RUN/NOT-APPLICABLE不构成现场通过。"
+}

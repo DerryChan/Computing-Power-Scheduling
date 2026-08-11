@@ -1,0 +1,3 @@
+﻿task_id,required_memory_gb,selected_region,chongqing_decision
+DT03-16GB,16,海南,REJECTED: single-card 12GB
+DT03-16GB-OFF,16,,REJECTED: single-card 12GB

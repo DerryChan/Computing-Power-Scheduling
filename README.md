@@ -1,30 +1,35 @@
-# Computing-Power-Scheduling
+# 跨境算力调度 PoC（Computing Power Scheduling）
 
-跨境算力调度 PoC：新加坡控制面 + 海南/重庆真实 GPU 节点（ResNet-50 分片推理）。
+新加坡控制面 + 海南/重庆真实 GPU 节点的 L1 跨境算力调度验证项目。主业务为冻结 ResNet-50 分片推理。
 
-## 目录
+## 目录结构
 
-- `webapp/real/`：真实调度控制面、node agent、PoC bundle 脚本
-- `webapp/`：早期仿真 UI（历史）
-- `deploy/`：部署安装脚本
-- `reports/`：测试报告（Word）、图表与证据包
+```
+docs/          测试实施方案等依据文档
+src/           真实调度源码（控制面 / 节点代理 / PoC bundle）
+  controller/  新加坡控制面与 UI
+  agent/       海南、重庆 node agent
+  poc_bundle/  推理与汇聚脚本
+reports/       正式测试报告、图表、证据包
+scripts/       报告生成等工具脚本
+archive/       历史仿真材料（只读归档，不参与当前部署）
+```
 
-## 真实调度快速说明
+## 快速说明
 
-| 角色 | 地址 | 端口 |
-|------|------|------|
-| 新加坡控制面 UI | `43.106.50.98` | 8080 |
-| 海南 agent | 经隧道 `127.0.0.1:18000` | 8000 |
-| 重庆 agent | `218.201.8.129` | 8000 |
+| 角色 | 说明 |
+|------|------|
+| 控制面 | `src/controller/server.py` |
+| 节点代理 | `src/agent/node_agent.py` |
+| 推理脚本 | `src/poc_bundle/app/infer.py` |
+| 正式报告 | `reports/L1_算力调度真实调度测试报告_20260811.docx` |
 
-源码入口：
-- 控制面：`webapp/real/controller/server.py`
-- 节点代理：`webapp/real/agent/node_agent.py`
+重新生成报告：
 
-## 报告
-
-正式真实调度报告（仅通过用例）：`reports/L1_算力调度真实调度测试报告_20260811.docx`
+```bash
+python3 scripts/generate_report.py
+```
 
 ## 安全
 
-仓库不包含服务器密码、私钥或 Token。请使用本地安全渠道保管凭据。
+服务器密码、Token 等敏感信息保存在本地 `.local/`（已 gitignore），不进入版本库。

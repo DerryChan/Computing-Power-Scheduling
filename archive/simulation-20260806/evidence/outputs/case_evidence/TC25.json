@@ -1,0 +1,33 @@
+{
+  "case_id": "TC25",
+  "title": "链路恢复与重传",
+  "level": "B",
+  "status": "PASS-SIM",
+  "evidence": "case_evidence/TC25.json",
+  "detail": "链路恢复后重新形成可执行候选并允许关联任务重传；仿真使用新一次调度决策，现场需核验续传/重传和脏文件清理。",
+  "metrics": "before=SCHEDULED; after=SCHEDULED; retry_keys=1",
+  "parent_task_id": "TC25-PARENT",
+  "child_task_id": "TC25-S01",
+  "execution_time": "2026-08-06T10:00:00+08:00 (simulation)",
+  "preconditions": "确定性合成输入、冻结镜像摘要、仿真节点资源已加载",
+  "input_files": "dataset-140m.tar.gz; manifest.csv; manifest_part-01..08.csv",
+  "input_sha256": "939ac769d7910bf51b920c47b5bd912a1cabb68b42a95151ed68820c560df6e2",
+  "shards": "NOT_APPLICABLE",
+  "candidate_set": "海南/重庆；按健康、链路、镜像、兼容性和单卡显存过滤",
+  "selection_reason": "链路恢复后重新形成可执行候选并允许关联任务重传；仿真使用新一次调度决策，现场需核验续传/重传和脏文件清理。",
+  "execution_node": "海南/重庆（仿真）",
+  "gpu_id": "海南-GPU1/重庆-GPU1（仿真）",
+  "actual_outputs": "分片结果、结果哈希、状态记录和用例证据JSON",
+  "missing_samples": "NOT_APPLICABLE",
+  "duplicate_samples": "NOT_APPLICABLE",
+  "log_evidence": "case_evidence/TC25.json; audit_log.jsonl",
+  "issue_id": "NONE",
+  "retry_relation": "DT04-PARENT-S03",
+  "cleanup_record": "case_evidence/TC25.json: cleanup_status=SIMULATED",
+  "test_conclusion": "PASS-SIM: 链路恢复后重新形成可执行候选并允许关联任务重传；仿真使用新一次调度决策，现场需核验续传/重传和脏文件清理。",
+  "coverage_source": "mapped:DT04",
+  "supporting_files": [
+    "case_evidence/TC25.json"
+  ],
+  "evidence_note": "PASS-SIM为本地确定性仿真证据；NOT-RUN/NOT-APPLICABLE不构成现场通过。"
+}

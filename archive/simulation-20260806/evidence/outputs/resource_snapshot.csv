@@ -1,0 +1,3 @@
+﻿region,model,gpu_count,gpu_memory_gb,available_gpus,available_memory_gb,load,healthy,link_up
+海南,RTX 4090,2,24.0,2,48.0,0.0,True,True
+重庆,RTX 4070,4,12.0,4,48.0,0.0,True,True

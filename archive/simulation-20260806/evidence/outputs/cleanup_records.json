@@ -1,0 +1,17 @@
+{
+  "simulation_status": "SIMULATED",
+  "parents": [
+    "DT05-A",
+    "DT05-B"
+  ],
+  "objects": [
+    "input",
+    "intermediate",
+    "temporary_container",
+    "nonessential_cache"
+  ],
+  "retained": [
+    "audit_log.jsonl",
+    "case_evidence/*.json"
+  ]
+}

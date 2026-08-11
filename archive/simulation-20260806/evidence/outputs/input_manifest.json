@@ -1,0 +1,10 @@
+{
+  "package": "dataset-140m.tar.gz",
+  "samples": 4096,
+  "shape": "224x224 synthetic JPEG",
+  "shards": 8,
+  "samples_per_shard": 512,
+  "input_sha256": "939ac769d7910bf51b920c47b5bd912a1cabb68b42a95151ed68820c560df6e2",
+  "seed": 202607,
+  "reference": "deterministic synthetic result hash"
+}
