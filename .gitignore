@@ -7,7 +7,20 @@ env/
 *.log
 outputs/
 qa_*/
-*.docx
 *.pdf
 *.zip
 
+# ignore loose docs at repo root, but keep reports/
+/*.docx
+!reports/
+!reports/**
+
+# secrets / local
+**/重庆测试服务器资源*.md
+**/*密码*
+**/.env
+**/*.pem
+**/*token*
+.DS_Store
+__pycache__/
+*.pyc

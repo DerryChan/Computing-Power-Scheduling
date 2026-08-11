@@ -1,0 +1,19 @@
+[Unit]
+Description=L1 Real Computing Power Scheduler UI
+After=network.target
+
+[Service]
+Type=simple
+User=operator
+WorkingDirectory=/opt/l1-scheduler-ui
+Environment=SCHEDULER_UI_TOKEN=REPLACE_TOKEN
+Environment=L1_AGENT_TOKEN=REPLACE_TOKEN
+Environment=SCHEDULER_MODE=real
+Environment=L1_HAINAN_URL=http://127.0.0.1:18000
+Environment=L1_CHONGQING_URL=http://218.201.8.129:8000
+ExecStart=/usr/bin/python3 /opt/l1-scheduler-ui/server.py --host 0.0.0.0 --port 8080
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

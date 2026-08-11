@@ -1,0 +1,20 @@
+[Unit]
+Description=L1 Real Node Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=L1_AGENT_REGION=REPLACE_REGION
+Environment=L1_AGENT_TOKEN=REPLACE_TOKEN
+Environment=L1_AGENT_HOST=REPLACE_HOST
+Environment=L1_AGENT_PORT=8000
+Environment=L1_GPU_WORKER=/opt/l1-node-agent/gpu_worker
+Environment=L1_AGENT_WORK=/opt/l1-node-agent/work
+WorkingDirectory=/opt/l1-node-agent
+ExecStart=/usr/bin/python3 /opt/l1-node-agent/node_agent.py --host ${L1_AGENT_HOST} --port ${L1_AGENT_PORT}
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

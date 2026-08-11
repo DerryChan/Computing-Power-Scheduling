@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L1 算力调度实时控制台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">CROSS-REGION COMPUTE FABRIC</div>
+      <h1>L1 算力调度实时控制台</h1>
+      <p>新加坡任务端 · 海南统一调度 · 海南/重庆分片执行 · 结果汇聚</p>
+    </div>
+    <div class="top-actions">
+      <span id="modeBadge" class="badge">SIMULATION</span>
+      <span id="connection" class="connection"><i></i>连接中</span>
+      <button id="resetBtn" class="button ghost">重置仿真</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="notice">
+      <span class="notice-dot"></span>
+      <span id="realityNote">当前为实时仿真模式：调度决策与 GPU 状态由本服务生成，不驱动三地真实 GPU 任务。</span>
+      <label class="token-field">访问令牌 <input id="tokenInput" type="password" placeholder="仅在服务端配置令牌时填写"></label>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card"><span>父任务总数</span><strong id="statTotal">0</strong><small>已提交任务</small></div>
+      <div class="stat-card"><span>成功任务</span><strong id="statSucceeded" class="green">0</strong><small>结果已汇聚</small></div>
+      <div class="stat-card"><span>运行中</span><strong id="statRunning" class="blue">0</strong><small>实时执行</small></div>
+      <div class="stat-card"><span>排队/失败</span><strong id="statQueue" class="orange">0 / 0</strong><small>需要关注</small></div>
+      <div class="stat-card"><span>成功率</span><strong id="statRate">—</strong><small>父任务口径</small></div>
+    </section>
+
+    <section class="layout-grid">
+      <div class="panel submit-panel">
+        <div class="panel-head"><div><span class="panel-kicker">LIVE TEST</span><h2>提交调度测试</h2></div><span class="pulse">● READY</span></div>
+        <form id="taskForm">
+          <label>测试场景
+            <select id="scenario"></select>
+          </label>
+          <div class="form-row">
+            <label>分片数 <input id="shards" type="number" min="1" max="16" value="8"></label>
+            <label>显存需求（GB） <input id="memory" type="number" min="1" max="24" value="8"></label>
+          </div>
+          <label>调度策略
+            <select id="mode"><option>海南优先</option><option>最小延迟</option><option>最小成本</option><option>加权平均</option></select>
+          </label>
+          <label>父任务ID（可选） <input id="taskId" type="text" placeholder="自动生成 POC-LIVE-xxxx"></label>
+          <button class="button primary" type="submit"><span>▶</span> 提交并实时观察</button>
+        </form>
+        <div class="scenario-card" id="scenarioHint">
+          <div class="scenario-code" id="scenarioCode">DT01</div>
+          <div class="scenario-title" id="scenarioTitle">两地共同执行的分片批量推理</div>
+          <p id="scenarioSummary" class="scenario-summary">加载中…</p>
+          <pre id="scenarioDetail" class="scenario-detail"></pre>
+        </div>
+      </div>
+
+      <div class="panel event-panel">
+        <div class="panel-head"><div><span class="panel-kicker">AUDIT STREAM</span><h2>实时事件流</h2></div><span id="lastUpdate">等待数据</span></div>
+        <div id="events" class="events"></div>
+      </div>
+    </section>
+
+    <section class="panel charts-panel">
+      <div class="panel-head">
+        <div><span class="panel-kicker">LIVE METRICS</span><h2>实时折线监控</h2></div>
+        <span class="subtle">显存可用 / GPU利用率 / 分片队列 · 最近约 3 分钟</span>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-title">两地可用显存（GB）</div>
+          <canvas id="chartFree" width="640" height="220"></canvas>
+          <div class="chart-legend"><span class="lg hn"></span>海南 <span class="lg cq"></span>重庆</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">平均 GPU 利用率（%）</div>
+          <canvas id="chartUtil" width="640" height="220"></canvas>
+          <div class="chart-legend"><span class="lg hn"></span>海南 <span class="lg cq"></span>重庆</div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">分片运行 / 排队 / 成功</div>
+          <canvas id="chartTasks" width="640" height="220"></canvas>
+          <div class="chart-legend"><span class="lg blue"></span>运行 <span class="lg orange"></span>排队 <span class="lg green"></span>成功</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel nodes-panel">
+      <div class="panel-head"><div><span class="panel-kicker">RESOURCE POOL</span><h2>两地资源状态</h2></div><span class="subtle">状态每 1 秒刷新</span></div>
+      <div id="nodes" class="nodes-grid"></div>
+    </section>
+
+    <section class="panel tasks-panel">
+      <div class="panel-head"><div><span class="panel-kicker">DISPATCH TIMELINE</span><h2>任务与分片结果</h2></div><span class="subtle">最新任务优先</span></div>
+      <div class="table-wrap">
+        <table><thead><tr><th>任务</th><th>类型</th><th>状态</th><th>节点 / GPU</th><th>进度</th><th>结果 / 原因</th></tr></thead><tbody id="taskRows"></tbody></table>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
