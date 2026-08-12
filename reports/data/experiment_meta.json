@@ -1,0 +1,416 @@
+{
+  "generated_at": "2026-08-12T16:12:17",
+  "report": "跨境算力调度算法测试报告.docx",
+  "summaries": {
+    "静态本地": {
+      "total_tasks": 30,
+      "success_tasks": 14,
+      "unscheduled_tasks": 16,
+      "success_rate_pct": 46.67,
+      "avg_latency_ms": 54.5476,
+      "avg_cost": 23.8964,
+      "avg_energy": 6.9674,
+      "gpu_util_pct": 62.5,
+      "avg_green_pct": 65.71,
+      "avg_compute_ms": 0.018,
+      "distribution": {
+        "重庆": 5,
+        "新疆": 3,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T17",
+        "T18",
+        "T20",
+        "T21",
+        "T23",
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "先到先服务": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 62.3667,
+      "avg_cost": 29.5318,
+      "avg_energy": 7.2589,
+      "gpu_util_pct": 100.0,
+      "avg_green_pct": 64.77,
+      "avg_compute_ms": 0.0129,
+      "distribution": {
+        "重庆": 6,
+        "新疆": 3,
+        "香港": 4,
+        "海南": 3,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T15",
+        "T20",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "最小延迟": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 60.3091,
+      "avg_cost": 27.8114,
+      "avg_energy": 6.872,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0136,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "新加坡": 6,
+        "重庆": 5
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T24",
+        "T25",
+        "T27",
+        "T30"
+      ]
+    },
+    "最小成本": {
+      "total_tasks": 30,
+      "success_tasks": 21,
+      "unscheduled_tasks": 9,
+      "success_rate_pct": 70.0,
+      "avg_latency_ms": 53.4794,
+      "avg_cost": 27.1357,
+      "avg_energy": 7.4163,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.24,
+      "avg_compute_ms": 0.0148,
+      "distribution": {
+        "重庆": 5,
+        "新疆": 3,
+        "香港": 4,
+        "新加坡": 6,
+        "海南": 3
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T20",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "遗传算法": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 58.7865,
+      "avg_cost": 27.125,
+      "avg_energy": 7.0039,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 64.77,
+      "avg_compute_ms": 11.8762,
+      "distribution": {
+        "新疆": 3,
+        "海南": 3,
+        "香港": 4,
+        "重庆": 6,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T09",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T29",
+        "T30"
+      ]
+    },
+    "本文方法（动态权重多目标调度）": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0225,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    }
+  },
+  "ablation": {
+    "本文方法（全模块）": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0171,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    },
+    "无延迟优化 (w_lat=0)": {
+      "total_tasks": 30,
+      "success_tasks": 21,
+      "unscheduled_tasks": 9,
+      "success_rate_pct": 70.0,
+      "avg_latency_ms": 55.6445,
+      "avg_cost": 26.5952,
+      "avg_energy": 7.1566,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.0,
+      "avg_compute_ms": 0.0154,
+      "distribution": {
+        "新疆": 3,
+        "海南": 3,
+        "香港": 3,
+        "重庆": 6,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T09",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "无成本优化 (w_cost=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4546,
+      "avg_cost": 26.4795,
+      "avg_energy": 7.0657,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0151,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    },
+    "无能耗优化 (w_energy=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 58.9425,
+      "avg_cost": 26.6159,
+      "avg_energy": 6.8234,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0153,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T29",
+        "T30"
+      ]
+    },
+    "无负载优化 (w_load=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0152,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    }
+  },
+  "ablation_notes": [
+    "无延迟优化 (w_lat=0)：成功率 73.33% → 70.00%，失败集 T03, T09, T14, T15, T23, T25, T28, T29, T30。",
+    "无成本优化 (w_cost=0)：成功率不变，时延/成本有变化（时延 55.48→55.45，成本 26.56→26.48）。",
+    "无能耗优化 (w_energy=0)：成功率不变，时延/成本有变化（时延 55.48→58.94，成本 26.56→26.62）。",
+    "无负载优化 (w_load=0)：与全模块指标一致，本场景下该权重未改变调度结果。"
+  ],
+  "failure_taxonomy": {
+    "counts": {
+      "空集群预算硬冲突": 2,
+      "运行期混合约束（容量+时延/预算等）": 3,
+      "空集群 TEE/合规硬冲突": 1,
+      "GPU/显存容量（运行期争用）": 2
+    },
+    "by_task": {
+      "T03": "空集群预算硬冲突",
+      "T14": "运行期混合约束（容量+时延/预算等）",
+      "T15": "空集群 TEE/合规硬冲突",
+      "T23": "运行期混合约束（容量+时延/预算等）",
+      "T25": "空集群预算硬冲突",
+      "T27": "GPU/显存容量（运行期争用）",
+      "T28": "运行期混合约束（容量+时延/预算等）",
+      "T30": "GPU/显存容量（运行期争用）"
+    },
+    "cold_start": {
+      "T03": "空集群即不可行：预算超限",
+      "T15": "空集群即不可行：TEE/合规",
+      "T25": "空集群即不可行：预算超限"
+    }
+  },
+  "ranking_notes": {
+    "success_rate_tied_with": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法",
+      "本文方法（动态权重多目标调度）"
+    ],
+    "success_rate_tied_others": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法"
+    ],
+    "paper_better_lat_or_cost_among_tied": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法"
+    ]
+  },
+  "meta": {
+    "task_set": "cross-border-30v2",
+    "note": "五节点资源模型 + 30 任务顺序提交，用于对比策略行为与消融贡献。",
+    "interarrival_h": 0.08,
+    "gpu_util_definition": "peak_utilization_during_run"
+  },
+  "health_issues": [],
+  "decision_diff": {
+    "静态本地": {
+      "identical_decisions": 19,
+      "total": 30,
+      "diff_rate_pct": 36.67
+    },
+    "先到先服务": {
+      "identical_decisions": 15,
+      "total": 30,
+      "diff_rate_pct": 50.0
+    },
+    "最小延迟": {
+      "identical_decisions": 22,
+      "total": 30,
+      "diff_rate_pct": 26.67
+    },
+    "最小成本": {
+      "identical_decisions": 21,
+      "total": 30,
+      "diff_rate_pct": 30.0
+    },
+    "遗传算法": {
+      "identical_decisions": 20,
+      "total": 30,
+      "diff_rate_pct": 33.33
+    }
+  }
+}

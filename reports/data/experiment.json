@@ -1,0 +1,4697 @@
+{
+  "meta": {
+    "task_set": "cross-border-30v2",
+    "note": "五节点资源模型 + 30 任务顺序提交，用于对比策略行为与消融贡献。",
+    "interarrival_h": 0.08,
+    "gpu_util_definition": "peak_utilization_during_run"
+  },
+  "tasks": [
+    {
+      "task_id": "T01",
+      "gpu_required": 2,
+      "data_gb": 7.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 100.0,
+      "budget": 70.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T02",
+      "gpu_required": 1,
+      "data_gb": 5.0,
+      "runtime_h": 3.5,
+      "latency_limit_ms": 150.0,
+      "budget": 35.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.8,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T03",
+      "gpu_required": 4,
+      "data_gb": 18.0,
+      "runtime_h": 5.0,
+      "latency_limit_ms": 280.0,
+      "budget": 39.61,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.2,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T04",
+      "gpu_required": 2,
+      "data_gb": 6.0,
+      "runtime_h": 3.8,
+      "latency_limit_ms": 105.0,
+      "budget": 65.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.6,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T05",
+      "gpu_required": 1,
+      "data_gb": 8.0,
+      "runtime_h": 4.2,
+      "latency_limit_ms": 165.0,
+      "budget": 32.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T06",
+      "gpu_required": 2,
+      "data_gb": 5.0,
+      "runtime_h": 3.5,
+      "latency_limit_ms": 115.0,
+      "budget": 90.0,
+      "require_tee": true,
+      "source_zone": "china",
+      "latency_sensitivity": 1.4,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T07",
+      "gpu_required": 3,
+      "data_gb": 9.0,
+      "runtime_h": 4.5,
+      "latency_limit_ms": 110.0,
+      "budget": 95.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.8,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T08",
+      "gpu_required": 1,
+      "data_gb": 4.0,
+      "runtime_h": 3.0,
+      "latency_limit_ms": 155.0,
+      "budget": 28.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 0.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T09",
+      "gpu_required": 2,
+      "data_gb": 10.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 140.0,
+      "budget": 55.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 1.0,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T10",
+      "gpu_required": 1,
+      "data_gb": 4.5,
+      "runtime_h": 3.2,
+      "latency_limit_ms": 95.0,
+      "budget": 75.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.8,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T11",
+      "gpu_required": 2,
+      "data_gb": 7.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 108.0,
+      "budget": 68.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.5,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T12",
+      "gpu_required": 2,
+      "data_gb": 5.5,
+      "runtime_h": 3.6,
+      "latency_limit_ms": 125.0,
+      "budget": 95.0,
+      "require_tee": true,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.3,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T13",
+      "gpu_required": 3,
+      "data_gb": 11.0,
+      "runtime_h": 4.8,
+      "latency_limit_ms": 120.0,
+      "budget": 58.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.5,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T14",
+      "gpu_required": 1,
+      "data_gb": 9.0,
+      "runtime_h": 3.8,
+      "latency_limit_ms": 175.0,
+      "budget": 30.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T15",
+      "gpu_required": 3,
+      "data_gb": 7.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 52.0,
+      "budget": 100.0,
+      "require_tee": true,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 2.0,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T16",
+      "gpu_required": 2,
+      "data_gb": 5.0,
+      "runtime_h": 3.4,
+      "latency_limit_ms": 100.0,
+      "budget": 72.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.6,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T17",
+      "gpu_required": 1,
+      "data_gb": 6.0,
+      "runtime_h": 3.2,
+      "latency_limit_ms": 150.0,
+      "budget": 30.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 0.8,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T18",
+      "gpu_required": 2,
+      "data_gb": 6.5,
+      "runtime_h": 3.7,
+      "latency_limit_ms": 118.0,
+      "budget": 92.0,
+      "require_tee": true,
+      "source_zone": "china",
+      "latency_sensitivity": 1.3,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T19",
+      "gpu_required": 3,
+      "data_gb": 10.0,
+      "runtime_h": 4.6,
+      "latency_limit_ms": 112.0,
+      "budget": 78.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T20",
+      "gpu_required": 1,
+      "data_gb": 5.0,
+      "runtime_h": 3.0,
+      "latency_limit_ms": 160.0,
+      "budget": 26.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T21",
+      "gpu_required": 2,
+      "data_gb": 8.0,
+      "runtime_h": 4.2,
+      "latency_limit_ms": 110.0,
+      "budget": 70.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.5,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T22",
+      "gpu_required": 1,
+      "data_gb": 3.5,
+      "runtime_h": 2.8,
+      "latency_limit_ms": 88.0,
+      "budget": 80.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.9,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T23",
+      "gpu_required": 2,
+      "data_gb": 9.0,
+      "runtime_h": 4.3,
+      "latency_limit_ms": 145.0,
+      "budget": 52.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.9,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T24",
+      "gpu_required": 2,
+      "data_gb": 5.5,
+      "runtime_h": 3.5,
+      "latency_limit_ms": 120.0,
+      "budget": 95.0,
+      "require_tee": true,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.2,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T25",
+      "gpu_required": 4,
+      "data_gb": 16.0,
+      "runtime_h": 4.5,
+      "latency_limit_ms": 240.0,
+      "budget": 32.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.0,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T26",
+      "gpu_required": 1,
+      "data_gb": 6.5,
+      "runtime_h": 3.5,
+      "latency_limit_ms": 150.0,
+      "budget": 34.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 0.8,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T27",
+      "gpu_required": 3,
+      "data_gb": 8.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 105.0,
+      "budget": 88.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    },
+    {
+      "task_id": "T28",
+      "gpu_required": 1,
+      "data_gb": 5.0,
+      "runtime_h": 3.2,
+      "latency_limit_ms": 165.0,
+      "budget": 28.0,
+      "require_tee": false,
+      "source_zone": "central_asia",
+      "latency_sensitivity": 0.7,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新疆"
+    },
+    {
+      "task_id": "T29",
+      "gpu_required": 2,
+      "data_gb": 6.0,
+      "runtime_h": 3.8,
+      "latency_limit_ms": 102.0,
+      "budget": 74.0,
+      "require_tee": false,
+      "source_zone": "china",
+      "latency_sensitivity": 1.6,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "重庆"
+    },
+    {
+      "task_id": "T30",
+      "gpu_required": 2,
+      "data_gb": 7.0,
+      "runtime_h": 4.0,
+      "latency_limit_ms": 125.0,
+      "budget": 62.0,
+      "require_tee": false,
+      "source_zone": "sea",
+      "latency_sensitivity": 1.2,
+      "memory_gb": 8.0,
+      "affinity": null,
+      "local_prefer": "新加坡"
+    }
+  ],
+  "summaries": {
+    "静态本地": {
+      "total_tasks": 30,
+      "success_tasks": 14,
+      "unscheduled_tasks": 16,
+      "success_rate_pct": 46.67,
+      "avg_latency_ms": 54.5476,
+      "avg_cost": 23.8964,
+      "avg_energy": 6.9674,
+      "gpu_util_pct": 62.5,
+      "avg_green_pct": 65.71,
+      "avg_compute_ms": 0.018,
+      "distribution": {
+        "重庆": 5,
+        "新疆": 3,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T06",
+        "T13",
+        "T14",
+        "T15",
+        "T17",
+        "T18",
+        "T20",
+        "T21",
+        "T23",
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "先到先服务": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 62.3667,
+      "avg_cost": 29.5318,
+      "avg_energy": 7.2589,
+      "gpu_util_pct": 100.0,
+      "avg_green_pct": 64.77,
+      "avg_compute_ms": 0.0129,
+      "distribution": {
+        "重庆": 6,
+        "新疆": 3,
+        "香港": 4,
+        "海南": 3,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T15",
+        "T20",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "最小延迟": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 60.3091,
+      "avg_cost": 27.8114,
+      "avg_energy": 6.872,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0136,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "新加坡": 6,
+        "重庆": 5
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T24",
+        "T25",
+        "T27",
+        "T30"
+      ]
+    },
+    "最小成本": {
+      "total_tasks": 30,
+      "success_tasks": 21,
+      "unscheduled_tasks": 9,
+      "success_rate_pct": 70.0,
+      "avg_latency_ms": 53.4794,
+      "avg_cost": 27.1357,
+      "avg_energy": 7.4163,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.24,
+      "avg_compute_ms": 0.0148,
+      "distribution": {
+        "重庆": 5,
+        "新疆": 3,
+        "香港": 4,
+        "新加坡": 6,
+        "海南": 3
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T20",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "遗传算法": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 58.7865,
+      "avg_cost": 27.125,
+      "avg_energy": 7.0039,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 64.77,
+      "avg_compute_ms": 11.8762,
+      "distribution": {
+        "新疆": 3,
+        "海南": 3,
+        "香港": 4,
+        "重庆": 6,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T09",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T29",
+        "T30"
+      ]
+    },
+    "本文方法（动态权重多目标调度）": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0225,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    }
+  },
+  "ablation": {
+    "本文方法（全模块）": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0171,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    },
+    "无延迟优化 (w_lat=0)": {
+      "total_tasks": 30,
+      "success_tasks": 21,
+      "unscheduled_tasks": 9,
+      "success_rate_pct": 70.0,
+      "avg_latency_ms": 55.6445,
+      "avg_cost": 26.5952,
+      "avg_energy": 7.1566,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.0,
+      "avg_compute_ms": 0.0154,
+      "distribution": {
+        "新疆": 3,
+        "海南": 3,
+        "香港": 3,
+        "重庆": 6,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T09",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T28",
+        "T29",
+        "T30"
+      ]
+    },
+    "无成本优化 (w_cost=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4546,
+      "avg_cost": 26.4795,
+      "avg_energy": 7.0657,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0151,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    },
+    "无能耗优化 (w_energy=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 58.9425,
+      "avg_cost": 26.6159,
+      "avg_energy": 6.8234,
+      "gpu_util_pct": 95.0,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0153,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T29",
+        "T30"
+      ]
+    },
+    "无负载优化 (w_load=0)": {
+      "total_tasks": 30,
+      "success_tasks": 22,
+      "unscheduled_tasks": 8,
+      "success_rate_pct": 73.33,
+      "avg_latency_ms": 55.4789,
+      "avg_cost": 26.5614,
+      "avg_energy": 7.0669,
+      "gpu_util_pct": 97.5,
+      "avg_green_pct": 65.45,
+      "avg_compute_ms": 0.0152,
+      "distribution": {
+        "海南": 4,
+        "新疆": 3,
+        "香港": 4,
+        "重庆": 5,
+        "新加坡": 6
+      },
+      "failed_ids": [
+        "T03",
+        "T14",
+        "T15",
+        "T23",
+        "T25",
+        "T27",
+        "T28",
+        "T30"
+      ]
+    }
+  },
+  "ablation_notes": [
+    "无延迟优化 (w_lat=0)：成功率 73.33% → 70.00%，失败集 T03, T09, T14, T15, T23, T25, T28, T29, T30。",
+    "无成本优化 (w_cost=0)：成功率不变，时延/成本有变化（时延 55.48→55.45，成本 26.56→26.48）。",
+    "无能耗优化 (w_energy=0)：成功率不变，时延/成本有变化（时延 55.48→58.94，成本 26.56→26.62）。",
+    "无负载优化 (w_load=0)：与全模块指标一致，本场景下该权重未改变调度结果。"
+  ],
+  "failure_taxonomy": {
+    "counts": {
+      "空集群预算硬冲突": 2,
+      "运行期混合约束（容量+时延/预算等）": 3,
+      "空集群 TEE/合规硬冲突": 1,
+      "GPU/显存容量（运行期争用）": 2
+    },
+    "by_task": {
+      "T03": "空集群预算硬冲突",
+      "T14": "运行期混合约束（容量+时延/预算等）",
+      "T15": "空集群 TEE/合规硬冲突",
+      "T23": "运行期混合约束（容量+时延/预算等）",
+      "T25": "空集群预算硬冲突",
+      "T27": "GPU/显存容量（运行期争用）",
+      "T28": "运行期混合约束（容量+时延/预算等）",
+      "T30": "GPU/显存容量（运行期争用）"
+    },
+    "cold_start": {
+      "T03": "空集群即不可行：预算超限",
+      "T15": "空集群即不可行：TEE/合规",
+      "T25": "空集群即不可行：预算超限"
+    }
+  },
+  "ranking_notes": {
+    "success_rate_tied_with": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法",
+      "本文方法（动态权重多目标调度）"
+    ],
+    "success_rate_tied_others": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法"
+    ],
+    "paper_better_lat_or_cost_among_tied": [
+      "先到先服务",
+      "最小延迟",
+      "遗传算法"
+    ]
+  },
+  "decision_diff_vs_paper": {
+    "静态本地": {
+      "identical_decisions": 19,
+      "total": 30,
+      "diff_rate_pct": 36.67
+    },
+    "先到先服务": {
+      "identical_decisions": 15,
+      "total": 30,
+      "diff_rate_pct": 50.0
+    },
+    "最小延迟": {
+      "identical_decisions": 22,
+      "total": 30,
+      "diff_rate_pct": 26.67
+    },
+    "最小成本": {
+      "identical_decisions": 21,
+      "total": 30,
+      "diff_rate_pct": 30.0
+    },
+    "遗传算法": {
+      "identical_decisions": 20,
+      "total": 30,
+      "diff_rate_pct": 33.33
+    }
+  },
+  "paper_rows": [
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T01",
+      "selected": "海南",
+      "status": "SCHEDULED",
+      "latency_ms": 48.0,
+      "cost": 27.0,
+      "energy": 6.72,
+      "green_ratio": 0.7,
+      "compute_ms": 0.03766699228435755,
+      "reason": "动态权重多目标最优：Score=0.0748 (S(t)=1.887, lat=48.0ms, cost=27.00, energy=6.720, load=0.00)",
+      "scores": {
+        "海南": 0.074825,
+        "香港": 0.308506,
+        "重庆": 0.31886,
+        "新疆": 1.386296,
+        "新加坡": 1.550999
+      },
+      "rejected": [],
+      "s_t": 1.8869999999999998
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T02",
+      "selected": "新疆",
+      "status": "SCHEDULED",
+      "latency_ms": 87.667,
+      "cost": 11.25,
+      "energy": 1.26,
+      "green_ratio": 0.85,
+      "compute_ms": 0.021208019461482763,
+      "reason": "动态权重多目标最优：Score=0.0000 (S(t)=0.951, lat=87.7ms, cost=11.25, energy=1.260, load=0.00)",
+      "scores": {
+        "新疆": 0.0,
+        "重庆": 0.782159,
+        "香港": 0.896839
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "时延超限（154.3>150.0 ms）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（181.0>150.0 ms）"
+        }
+      ],
+      "s_t": 0.9506666666666668
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T03",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.014291959814727306,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "预算超限（103.00>39.61 元）"
+        },
+        {
+          "region": "海南",
+          "reason": "预算超限（100.40>39.61 元）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（96.00>39.61 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "预算超限（88.00>39.61 元）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需4，剩3）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T04",
+      "selected": "海南",
+      "status": "SCHEDULED",
+      "latency_ms": 46.2,
+      "cost": 25.0,
+      "energy": 6.384,
+      "green_ratio": 0.7,
+      "compute_ms": 0.025874993298202753,
+      "reason": "动态权重多目标最优：Score=0.1088 (S(t)=1.728, lat=46.2ms, cost=25.00, energy=6.384, load=0.33)",
+      "scores": {
+        "海南": 0.108788,
+        "香港": 0.282646,
+        "重庆": 0.321722,
+        "新疆": 1.293174,
+        "新加坡": 1.395094
+      },
+      "rejected": [],
+      "s_t": 1.7280000000000002
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T05",
+      "selected": "新疆",
+      "status": "SCHEDULED",
+      "latency_ms": 94.467,
+      "cost": 15.9,
+      "energy": 1.512,
+      "green_ratio": 0.85,
+      "compute_ms": 0.017291982658207417,
+      "reason": "动态权重多目标最优：Score=0.0250 (S(t)=0.826, lat=94.5ms, cost=15.90, energy=1.512, load=0.25)",
+      "scores": {
+        "新疆": 0.025
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "预算超限（40.40>32.00 元）"
+        },
+        {
+          "region": "海南",
+          "reason": "时延超限（177.1>165.0 ms）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（46.20>32.00 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（207.8>165.0 ms）"
+        }
+      ],
+      "s_t": 0.8255757575757575
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T06",
+      "selected": "香港",
+      "status": "SCHEDULED",
+      "latency_ms": 45.667,
+      "cost": 32.0,
+      "energy": 8.512,
+      "green_ratio": 0.6,
+      "compute_ms": 0.013375014532357454,
+      "reason": "动态权重多目标最优：Score=0.1000 (S(t)=1.467, lat=45.7ms, cost=32.00, energy=8.512, load=0.00)",
+      "scores": {
+        "香港": 0.1,
+        "新加坡": 1.175279
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "海南",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "新疆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        }
+      ],
+      "s_t": 1.4669565217391303
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T07",
+      "selected": "重庆",
+      "status": "SCHEDULED",
+      "latency_ms": 58.2,
+      "cost": 34.2,
+      "energy": 15.552,
+      "green_ratio": 0.55,
+      "compute_ms": 0.017915968783199787,
+      "reason": "动态权重多目标最优：Score=0.0471 (S(t)=2.062, lat=58.2ms, cost=34.20, energy=15.552, load=0.00)",
+      "scores": {
+        "重庆": 0.047073,
+        "香港": 0.187366,
+        "新加坡": 1.611313
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需3，剩2）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需3，剩2）"
+        }
+      ],
+      "s_t": 2.061818181818182
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T08",
+      "selected": "海南",
+      "status": "SCHEDULED",
+      "latency_ms": 38.0,
+      "cost": 11.5,
+      "energy": 2.52,
+      "green_ratio": 0.7,
+      "compute_ms": 0.025374989490956068,
+      "reason": "动态权重多目标最优：Score=0.1391 (S(t)=0.654, lat=38.0ms, cost=11.50, energy=2.520, load=0.67)",
+      "scores": {
+        "海南": 0.139053,
+        "香港": 0.219619,
+        "重庆": 0.228445,
+        "新疆": 0.538389,
+        "新加坡": 0.609109
+      },
+      "rejected": [],
+      "s_t": 0.6537096774193548
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T09",
+      "selected": "新疆",
+      "status": "SCHEDULED",
+      "latency_ms": 99.333,
+      "cost": 24.0,
+      "energy": 2.88,
+      "green_ratio": 0.85,
+      "compute_ms": 0.01491600414738059,
+      "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.282, lat=99.3ms, cost=24.00, energy=2.880, load=0.50)",
+      "scores": {
+        "新疆": 0.05
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "时延超限（159.3>140.0 ms）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "香港",
+          "reason": "时延超限（160.4>140.0 ms）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（226.0>140.0 ms）"
+        }
+      ],
+      "s_t": 1.282142857142857
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T10",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 33.4,
+      "cost": 15.7,
+      "energy": 3.584,
+      "green_ratio": 0.65,
+      "compute_ms": 0.02116599353030324,
+      "reason": "动态权重多目标最优：Score=0.0745 (S(t)=1.825, lat=33.4ms, cost=15.70, energy=3.584, load=0.00)",
+      "scores": {
+        "新加坡": 0.074468,
+        "海南": 0.53792,
+        "香港": 0.750181,
+        "重庆": 1.550434
+      },
+      "rejected": [
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 1.8246315789473684
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T11",
+      "selected": "重庆",
+      "status": "SCHEDULED",
+      "latency_ms": 51.6,
+      "cost": 21.6,
+      "energy": 9.216,
+      "green_ratio": 0.55,
+      "compute_ms": 0.016790989320725203,
+      "reason": "动态权重多目标最优：Score=0.1425 (S(t)=1.649, lat=51.6ms, cost=21.60, energy=9.216, load=0.30)",
+      "scores": {
+        "重庆": 0.14254,
+        "香港": 0.186806,
+        "新加坡": 1.317274
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.6493055555555554
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T12",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 38.8,
+      "cost": 30.7,
+      "energy": 8.064,
+      "green_ratio": 0.65,
+      "compute_ms": 0.015208031982183456,
+      "reason": "动态权重多目标最优：Score=0.0083 (S(t)=1.278, lat=38.8ms, cost=30.70, energy=8.064, load=0.08)",
+      "scores": {
+        "新加坡": 0.008333,
+        "香港": 1.16151
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "海南",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "新疆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        }
+      ],
+      "s_t": 1.2776399999999999
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T13",
+      "selected": "重庆",
+      "status": "SCHEDULED",
+      "latency_ms": 61.0,
+      "cost": 37.6,
+      "energy": 16.5888,
+      "green_ratio": 0.55,
+      "compute_ms": 0.014290970284491777,
+      "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.697, lat=61.0ms, cost=37.60, energy=16.589, load=0.50)",
+      "scores": {
+        "重庆": 0.05
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需3，剩1）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（67.40>58.00 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "预算超限（85.60>58.00 元）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        }
+      ],
+      "s_t": 1.6968750000000001
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T14",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.00891595846042037,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "预算超限（43.60>30.00 元）"
+        },
+        {
+          "region": "海南",
+          "reason": "时延超限（182.2>175.0 ms）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（49.20>30.00 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（214.2>175.0 ms）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T15",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.024457986000925303,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "海南",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "香港",
+          "reason": "时延超限（150.1>52.0 ms）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（205.0>52.0 ms）"
+        },
+        {
+          "region": "新疆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T16",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 37.6,
+      "cost": 28.8,
+      "energy": 7.616,
+      "green_ratio": 0.65,
+      "compute_ms": 0.01795799471437931,
+      "reason": "动态权重多目标最优：Score=0.0250 (S(t)=1.651, lat=37.6ms, cost=28.80, energy=7.616, load=0.25)",
+      "scores": {
+        "新加坡": 0.025,
+        "香港": 0.713278,
+        "重庆": 1.423663
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.6512000000000002
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T17",
+      "selected": "海南",
+      "status": "SCHEDULED",
+      "latency_ms": 40.8,
+      "cost": 14.0,
+      "energy": 2.688,
+      "green_ratio": 0.7,
+      "compute_ms": 0.018708000425249338,
+      "reason": "动态权重多目标最优：Score=0.1075 (S(t)=0.763, lat=40.8ms, cost=14.00, energy=2.688, load=0.83)",
+      "scores": {
+        "海南": 0.107471,
+        "香港": 0.519435,
+        "重庆": 0.722404
+      },
+      "rejected": [
+        {
+          "region": "新加坡",
+          "reason": "预算超限（30.40>30.00 元）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 0.7632
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T18",
+      "selected": "香港",
+      "status": "SCHEDULED",
+      "latency_ms": 48.467,
+      "cost": 36.5,
+      "energy": 8.9984,
+      "green_ratio": 0.6,
+      "compute_ms": 0.023917004000395536,
+      "reason": "动态权重多目标最优：Score=0.1250 (S(t)=1.375, lat=48.5ms, cost=36.50, energy=8.998, load=0.25)",
+      "scores": {
+        "香港": 0.125,
+        "新加坡": 1.149883
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "海南",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "新疆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        }
+      ],
+      "s_t": 1.3754661016949152
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T19",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 49.4,
+      "cost": 58.3,
+      "energy": 15.456,
+      "green_ratio": 0.65,
+      "compute_ms": 0.0191659783013165,
+      "reason": "动态权重多目标最优：Score=0.0417 (S(t)=1.837, lat=49.4ms, cost=58.30, energy=15.456, load=0.42)",
+      "scores": {
+        "新加坡": 0.041667,
+        "香港": 1.596789
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需3，剩2）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        }
+      ],
+      "s_t": 1.8373660714285716
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T20",
+      "selected": "重庆",
+      "status": "SCHEDULED",
+      "latency_ms": 125.667,
+      "cost": 26.0,
+      "energy": 3.456,
+      "green_ratio": 0.55,
+      "compute_ms": 0.014666991773992777,
+      "reason": "动态权重多目标最优：Score=0.0800 (S(t)=0.937, lat=125.7ms, cost=26.00, energy=3.456, load=0.80)",
+      "scores": {
+        "重庆": 0.08
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（30.00>26.00 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（179.0>160.0 ms）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 0.9373437499999999
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T21",
+      "selected": "香港",
+      "status": "SCHEDULED",
+      "latency_ms": 52.467,
+      "cost": 42.8,
+      "energy": 10.2144,
+      "green_ratio": 0.6,
+      "compute_ms": 0.09204103844240308,
+      "reason": "动态权重多目标最优：Score=0.1500 (S(t)=1.662, lat=52.5ms, cost=42.80, energy=10.214, load=0.50)",
+      "scores": {
+        "香港": 0.15,
+        "新加坡": 1.384613
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.6615909090909091
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T22",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 31.0,
+      "cost": 13.3,
+      "energy": 3.136,
+      "green_ratio": 0.65,
+      "compute_ms": 0.02258300082758069,
+      "reason": "动态权重多目标最优：Score=0.0667 (S(t)=1.927, lat=31.0ms, cost=13.30, energy=3.136, load=0.67)",
+      "scores": {
+        "新加坡": 0.066667,
+        "香港": 0.85015,
+        "重庆": 1.635816
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 1.9269886363636362
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T23",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.0070829992182552814,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "时延超限（157.2>145.0 ms）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（219.2>145.0 ms）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T24",
+      "selected": "新加坡",
+      "status": "SCHEDULED",
+      "latency_ms": 38.4,
+      "cost": 30.0,
+      "energy": 7.84,
+      "green_ratio": 0.65,
+      "compute_ms": 0.015249999705702066,
+      "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.188, lat=38.4ms, cost=30.00, energy=7.840, load=0.75)",
+      "scores": {
+        "新加坡": 0.075,
+        "香港": 1.145804
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "海南",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        },
+        {
+          "region": "新疆",
+          "reason": "TEE 合规硬护栏：节点未配置可信执行环境"
+        }
+      ],
+      "s_t": 1.188
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T25",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.003334018401801586,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需4，剩1）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需4，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "GPU 剩余容量不足（需4，剩2）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "GPU 剩余容量不足（需4，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需4，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T26",
+      "selected": "重庆",
+      "status": "SCHEDULED",
+      "latency_ms": 46.2,
+      "cost": 12.2,
+      "energy": 4.032,
+      "green_ratio": 0.55,
+      "compute_ms": 0.019499973859637976,
+      "reason": "动态权重多目标最优：Score=0.1702 (S(t)=0.779, lat=46.2ms, cost=12.20, energy=4.032, load=0.90)",
+      "scores": {
+        "重庆": 0.170217,
+        "香港": 0.235432,
+        "新加坡": 0.762429
+      },
+      "rejected": [
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 0.7786666666666667
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T27",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.0024999608285725117,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "GPU 剩余容量不足（需3，剩2）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "GPU 剩余容量不足（需3，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需3，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T28",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.006208021659404039,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "预算超限（30.60>28.00 元）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "时延超限（179.8>165.0 ms）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需1，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T29",
+      "selected": "香港",
+      "status": "SCHEDULED",
+      "latency_ms": 48.2,
+      "cost": 36.0,
+      "energy": 9.2416,
+      "green_ratio": 0.6,
+      "compute_ms": 0.010417017620056868,
+      "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.767, lat=48.2ms, cost=36.00, energy=9.242, load=0.75)",
+      "scores": {
+        "香港": 0.075
+      },
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.767058823529412
+    },
+    {
+      "algorithm": "本文方法（动态权重多目标调度）",
+      "task_id": "T30",
+      "selected": null,
+      "status": "UNSCHEDULED",
+      "latency_ms": null,
+      "cost": null,
+      "energy": null,
+      "green_ratio": null,
+      "compute_ms": 0.0026249908842146397,
+      "reason": "无满足硬约束的候选节点",
+      "scores": {},
+      "rejected": [
+        {
+          "region": "重庆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "海南",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "香港",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        },
+        {
+          "region": "新加坡",
+          "reason": "GPU 剩余容量不足（需2，剩1）"
+        },
+        {
+          "region": "新疆",
+          "reason": "GPU 剩余容量不足（需2，剩0）"
+        }
+      ],
+      "s_t": 1.0
+    }
+  ],
+  "baseline_rows": {
+    "静态本地": [
+      {
+        "task_id": "T01",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.04295801045373082,
+        "reason": "静态本地路由固定映射至 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T02",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.667,
+        "cost": 11.25,
+        "energy": 1.26,
+        "green_ratio": 0.85,
+        "compute_ms": 0.021875021047890186,
+        "reason": "静态本地路由固定映射至 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.00920804450288415,
+        "reason": "静态本地节点 新加坡 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T04",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 50.0,
+        "cost": 20.0,
+        "energy": 8.7552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.026999972760677338,
+        "reason": "静态本地路由固定映射至 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 0.013291952200233936,
+        "reason": "静态本地路由固定映射至 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T06",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.008750008419156075,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T07",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 34.2,
+        "energy": 15.552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.01733400858938694,
+        "reason": "静态本地路由固定映射至 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T08",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 42.2,
+        "cost": 9.2,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 0.02008303999900818,
+        "reason": "静态本地路由固定映射至 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T09",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 99.333,
+        "cost": 24.0,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 0.012792006600648165,
+        "reason": "静态本地路由固定映射至 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T10",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 33.4,
+        "cost": 15.7,
+        "energy": 3.584,
+        "green_ratio": 0.65,
+        "compute_ms": 0.017332960851490498,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T11",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.016790989320725203,
+        "reason": "静态本地路由固定映射至 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T12",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.8,
+        "cost": 30.7,
+        "energy": 8.064,
+        "green_ratio": 0.65,
+        "compute_ms": 0.009874987881630659,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T13",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.007957976777106524,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T14",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006791960913687944,
+        "reason": "静态本地节点 新疆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.004791945684701204,
+        "reason": "静态本地节点 新疆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T16",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 37.6,
+        "cost": 28.8,
+        "energy": 7.616,
+        "green_ratio": 0.65,
+        "compute_ms": 0.013792014215141535,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T17",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.008542032446712255,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T18",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006541959010064602,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 0.015166006051003933,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T20",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0067909713834524155,
+        "reason": "静态本地节点 新疆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T21",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.009416951797902584,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 0.013707962352782488,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006542017217725515,
+        "reason": "静态本地节点 新疆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T24",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.4,
+        "cost": 30.0,
+        "energy": 7.84,
+        "green_ratio": 0.65,
+        "compute_ms": 0.009624985978007317,
+        "reason": "静态本地路由固定映射至 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006209011189639568,
+        "reason": "静态本地节点 新加坡 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T26",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.011541997082531452,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T27",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.007166992872953415,
+        "reason": "静态本地节点 新加坡 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T28",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006707967258989811,
+        "reason": "静态本地节点 新疆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T29",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0072919647209346294,
+        "reason": "静态本地节点 重庆 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      },
+      {
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0070829992182552814,
+        "reason": "静态本地节点 新加坡 不满足硬约束",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "静态本地"
+      }
+    ],
+    "先到先服务": [
+      {
+        "task_id": "T01",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.023374974261969328,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T02",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 127.667,
+        "cost": 27.0,
+        "energy": 4.032,
+        "green_ratio": 0.55,
+        "compute_ms": 0.016833015251904726,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.009583018254488707,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T04",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 50.0,
+        "cost": 20.0,
+        "energy": 8.7552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.020457955542951822,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 0.013000040780752897,
+        "reason": "先到先服务：按节点顺序选中 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T06",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 45.667,
+        "cost": 32.0,
+        "energy": 8.512,
+        "green_ratio": 0.6,
+        "compute_ms": 0.01029198756441474,
+        "reason": "先到先服务：按节点顺序选中 香港",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T07",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 34.2,
+        "energy": 15.552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.020749983377754688,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T08",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 42.2,
+        "cost": 9.2,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 0.021499989088624716,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T09",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 99.333,
+        "cost": 24.0,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 0.011791998986154795,
+        "reason": "先到先服务：按节点顺序选中 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T10",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.8,
+        "cost": 22.15,
+        "energy": 3.6864,
+        "green_ratio": 0.55,
+        "compute_ms": 0.018666964024305344,
+        "reason": "先到先服务：按节点顺序选中 重庆",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T11",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 48.0,
+        "cost": 27.0,
+        "energy": 6.72,
+        "green_ratio": 0.7,
+        "compute_ms": 0.014417048078030348,
+        "reason": "先到先服务：按节点顺序选中 海南",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T12",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 63.2,
+        "cost": 32.6,
+        "energy": 8.7552,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010207993909716606,
+        "reason": "先到先服务：按节点顺序选中 香港",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T13",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 47.0,
+        "energy": 12.096,
+        "green_ratio": 0.7,
+        "compute_ms": 0.010374991688877344,
+        "reason": "先到先服务：按节点顺序选中 海南",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T14",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.2,
+        "cost": 16.5,
+        "energy": 1.368,
+        "green_ratio": 0.85,
+        "compute_ms": 0.011832977179437876,
+        "reason": "先到先服务：按节点顺序选中 新疆",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006125017534941435,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T16",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 61.6,
+        "cost": 30.4,
+        "energy": 8.2688,
+        "green_ratio": 0.6,
+        "compute_ms": 0.011082971468567848,
+        "reason": "先到先服务：按节点顺序选中 香港",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T17",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 40.8,
+        "cost": 14.0,
+        "energy": 2.688,
+        "green_ratio": 0.7,
+        "compute_ms": 0.01291598891839385,
+        "reason": "先到先服务：按节点顺序选中 海南",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T18",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 48.467,
+        "cost": 36.5,
+        "energy": 8.9984,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010540999937802553,
+        "reason": "先到先服务：按节点顺序选中 香港",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 0.00762502895668149,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T20",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.004208006430417299,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T21",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 73.133,
+        "cost": 55.0,
+        "energy": 9.408,
+        "green_ratio": 0.65,
+        "compute_ms": 0.007707974873483181,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 0.007959024515002966,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.005708017852157354,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T24",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.4,
+        "cost": 30.0,
+        "energy": 7.84,
+        "green_ratio": 0.65,
+        "compute_ms": 0.007375027053058147,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.004375004209578037,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T26",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 63.333,
+        "cost": 33.05,
+        "energy": 3.92,
+        "green_ratio": 0.65,
+        "compute_ms": 0.007833004929125309,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T27",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 45.4,
+        "cost": 50.0,
+        "energy": 13.44,
+        "green_ratio": 0.65,
+        "compute_ms": 0.00762502895668149,
+        "reason": "先到先服务：按节点顺序选中 新加坡",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T28",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0025840126909315586,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T29",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.002541986759752035,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      },
+      {
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.002459040842950344,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "先到先服务"
+      }
+    ],
+    "最小延迟": [
+      {
+        "task_id": "T01",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 48.0,
+        "cost": 27.0,
+        "energy": 6.72,
+        "green_ratio": 0.7,
+        "compute_ms": 0.024834007490426302,
+        "reason": "最小延迟策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T02",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.667,
+        "cost": 11.25,
+        "energy": 1.26,
+        "green_ratio": 0.85,
+        "compute_ms": 0.01775001874193549,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.008833012543618679,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T04",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 46.2,
+        "cost": 25.0,
+        "energy": 6.384,
+        "green_ratio": 0.7,
+        "compute_ms": 0.021666986867785454,
+        "reason": "最小延迟策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 0.013665994629263878,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T06",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 45.667,
+        "cost": 32.0,
+        "energy": 8.512,
+        "green_ratio": 0.6,
+        "compute_ms": 0.0149579718708992,
+        "reason": "最小延迟策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T07",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 58.0,
+        "cost": 60.3,
+        "energy": 16.416,
+        "green_ratio": 0.6,
+        "compute_ms": 0.014833000022917986,
+        "reason": "最小延迟策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T08",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 38.0,
+        "cost": 11.5,
+        "energy": 2.52,
+        "green_ratio": 0.7,
+        "compute_ms": 0.021625019144266844,
+        "reason": "最小延迟策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T09",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 99.333,
+        "cost": 24.0,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 0.011749973054975271,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T10",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 33.4,
+        "cost": 15.7,
+        "energy": 3.584,
+        "green_ratio": 0.65,
+        "compute_ms": 0.018167018424719572,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T11",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 50.333,
+        "cost": 39.4,
+        "energy": 9.728,
+        "green_ratio": 0.6,
+        "compute_ms": 0.014541030395776033,
+        "reason": "最小延迟策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T12",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.8,
+        "cost": 30.7,
+        "energy": 8.064,
+        "green_ratio": 0.65,
+        "compute_ms": 0.007041962817311287,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T13",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 61.0,
+        "cost": 37.6,
+        "energy": 16.5888,
+        "green_ratio": 0.55,
+        "compute_ms": 0.009125040378421545,
+        "reason": "最小延迟策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T14",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.008333998266607523,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0035410048440098763,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T16",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 37.6,
+        "cost": 28.8,
+        "energy": 7.616,
+        "green_ratio": 0.65,
+        "compute_ms": 0.011249969247728586,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T17",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 40.8,
+        "cost": 14.0,
+        "energy": 2.688,
+        "green_ratio": 0.7,
+        "compute_ms": 0.015874975360929966,
+        "reason": "最小延迟策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T18",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 67.133,
+        "cost": 46.7,
+        "energy": 8.288,
+        "green_ratio": 0.65,
+        "compute_ms": 0.0070829992182552814,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 0.009125040378421545,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T20",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 125.667,
+        "cost": 26.0,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 0.010750023648142815,
+        "reason": "最小延迟策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T21",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 53.2,
+        "cost": 23.2,
+        "energy": 9.6768,
+        "green_ratio": 0.55,
+        "compute_ms": 0.011166033800691366,
+        "reason": "最小延迟策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 0.014624965842813253,
+        "reason": "最小延迟策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.003999972250312567,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T24",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.00200001522898674,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0038750004023313522,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T26",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 44.667,
+        "cost": 24.8,
+        "energy": 4.256,
+        "green_ratio": 0.6,
+        "compute_ms": 0.014124962035566568,
+        "reason": "最小延迟策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T27",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.003917026333510876,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T28",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 126.467,
+        "cost": 26.4,
+        "energy": 3.6864,
+        "green_ratio": 0.55,
+        "compute_ms": 0.008834002073854208,
+        "reason": "最小延迟策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T29",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 50.0,
+        "cost": 20.0,
+        "energy": 8.7552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.007292022928595543,
+        "reason": "最小延迟策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      },
+      {
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0034580007195472717,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小延迟"
+      }
+    ],
+    "最小成本": [
+      {
+        "task_id": "T01",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.0219999928958714,
+        "reason": "最小成本策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T02",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.667,
+        "cost": 11.25,
+        "energy": 1.26,
+        "green_ratio": 0.85,
+        "compute_ms": 0.017000013031065464,
+        "reason": "最小成本策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.00825000461190939,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T04",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 50.0,
+        "cost": 20.0,
+        "energy": 8.7552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.020709005184471607,
+        "reason": "最小成本策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 0.013000040780752897,
+        "reason": "最小成本策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T06",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 45.667,
+        "cost": 32.0,
+        "energy": 8.512,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010208983439952135,
+        "reason": "最小成本策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T07",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 34.2,
+        "energy": 15.552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.01750001683831215,
+        "reason": "最小成本策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T08",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 42.2,
+        "cost": 9.2,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 0.02174999099224806,
+        "reason": "最小成本策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T09",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 99.333,
+        "cost": 24.0,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 0.014041026588529348,
+        "reason": "最小成本策略",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T10",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 33.4,
+        "cost": 15.7,
+        "energy": 3.584,
+        "green_ratio": 0.65,
+        "compute_ms": 0.03270799061283469,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T11",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.017250014934688807,
+        "reason": "最小成本策略",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T12",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.8,
+        "cost": 30.7,
+        "energy": 8.064,
+        "green_ratio": 0.65,
+        "compute_ms": 0.010249961633235216,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T13",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 47.0,
+        "energy": 12.096,
+        "green_ratio": 0.7,
+        "compute_ms": 0.010083022061735392,
+        "reason": "最小成本策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T14",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006499991286545992,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.004583969712257385,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T16",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 37.6,
+        "cost": 28.8,
+        "energy": 7.616,
+        "green_ratio": 0.65,
+        "compute_ms": 0.015624973457306623,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T17",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 40.8,
+        "cost": 14.0,
+        "energy": 2.688,
+        "green_ratio": 0.7,
+        "compute_ms": 0.012125005014240742,
+        "reason": "最小成本策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T18",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 48.467,
+        "cost": 36.5,
+        "energy": 8.9984,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010000017937272787,
+        "reason": "最小成本策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 0.010624993592500687,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T20",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.00666698906570673,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T21",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 49.8,
+        "cost": 29.0,
+        "energy": 7.056,
+        "green_ratio": 0.7,
+        "compute_ms": 0.01391698606312275,
+        "reason": "最小成本策略",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 0.010540999937802553,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.005375011824071407,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T24",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.4,
+        "cost": 30.0,
+        "energy": 7.84,
+        "green_ratio": 0.65,
+        "compute_ms": 0.012125005014240742,
+        "reason": "最小成本策略",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.004125002305954695,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T26",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 44.667,
+        "cost": 24.8,
+        "energy": 4.256,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010917021427303553,
+        "reason": "最小成本策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T27",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 71.8,
+        "cost": 52.0,
+        "energy": 14.592,
+        "green_ratio": 0.6,
+        "compute_ms": 0.0077080330811440945,
+        "reason": "最小成本策略",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T28",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.003917026333510876,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T29",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.002416956704109907,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      },
+      {
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.002415967173874378,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "最小成本"
+      }
+    ],
+    "遗传算法": [
+      {
+        "task_id": "T01",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 70.0,
+        "cost": 22.5,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 11.6991670220159,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T02",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.667,
+        "cost": 11.25,
+        "energy": 1.26,
+        "green_ratio": 0.85,
+        "compute_ms": 11.997207999229431,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.022332998923957348,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T04",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 46.2,
+        "cost": 25.0,
+        "energy": 6.384,
+        "green_ratio": 0.7,
+        "compute_ms": 12.760542042087764,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 11.725332995411009,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新疆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T06",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 45.667,
+        "cost": 32.0,
+        "energy": 8.512,
+        "green_ratio": 0.6,
+        "compute_ms": 11.670875013805926,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T07",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 55.0,
+        "cost": 42.75,
+        "energy": 11.34,
+        "green_ratio": 0.7,
+        "compute_ms": 11.899416975211352,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T08",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 42.2,
+        "cost": 9.2,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 11.968959006480873,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T09",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.01637497916817665,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T10",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 33.4,
+        "cost": 15.7,
+        "energy": 3.584,
+        "green_ratio": 0.65,
+        "compute_ms": 11.525167035870254,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T11",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 11.833084048703313,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T12",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.8,
+        "cost": 30.7,
+        "energy": 8.064,
+        "green_ratio": 0.65,
+        "compute_ms": 12.056040985044092,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T13",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 61.0,
+        "cost": 37.6,
+        "energy": 16.5888,
+        "green_ratio": 0.55,
+        "compute_ms": 11.728708981536329,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T14",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.015416997484862804,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.005208014044910669,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T16",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 37.6,
+        "cost": 28.8,
+        "energy": 7.616,
+        "green_ratio": 0.65,
+        "compute_ms": 11.394583038054407,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T17",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 42.8,
+        "cost": 22.8,
+        "energy": 3.8912,
+        "green_ratio": 0.6,
+        "compute_ms": 12.062499998137355,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T18",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 48.467,
+        "cost": 36.5,
+        "energy": 8.9984,
+        "green_ratio": 0.6,
+        "compute_ms": 12.084916001185775,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 11.564499989617616,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T20",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 125.667,
+        "cost": 26.0,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 11.406709032598883,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T21",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 53.2,
+        "cost": 23.2,
+        "energy": 9.6768,
+        "green_ratio": 0.55,
+        "compute_ms": 13.382417033426464,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 11.967625003308058,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.01487502595409751,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T24",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.4,
+        "cost": 30.0,
+        "energy": 7.84,
+        "green_ratio": 0.65,
+        "compute_ms": 11.712374980561435,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "新加坡": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.005874957423657179,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T26",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 42.5,
+        "cost": 15.25,
+        "energy": 2.94,
+        "green_ratio": 0.7,
+        "compute_ms": 11.829082970507443,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "海南": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T27",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 71.8,
+        "cost": 52.0,
+        "energy": 14.592,
+        "green_ratio": 0.6,
+        "compute_ms": 11.650583008304238,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "香港": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T28",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 126.467,
+        "cost": 26.4,
+        "energy": 3.6864,
+        "green_ratio": 0.55,
+        "compute_ms": 11.357125011272728,
+        "reason": "可行性受限遗传算法搜索最优可行节点",
+        "scores": {
+          "重庆": 0.0
+        },
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T29",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006166985258460045,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      },
+      {
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.002708984538912773,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0,
+        "algorithm": "遗传算法"
+      }
+    ],
+    "本文方法（动态权重多目标调度）": [
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T01",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 48.0,
+        "cost": 27.0,
+        "energy": 6.72,
+        "green_ratio": 0.7,
+        "compute_ms": 0.03766699228435755,
+        "reason": "动态权重多目标最优：Score=0.0748 (S(t)=1.887, lat=48.0ms, cost=27.00, energy=6.720, load=0.00)",
+        "scores": {
+          "海南": 0.074825,
+          "香港": 0.308506,
+          "重庆": 0.31886,
+          "新疆": 1.386296,
+          "新加坡": 1.550999
+        },
+        "s_t": 1.8869999999999998
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T02",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 87.667,
+        "cost": 11.25,
+        "energy": 1.26,
+        "green_ratio": 0.85,
+        "compute_ms": 0.021208019461482763,
+        "reason": "动态权重多目标最优：Score=0.0000 (S(t)=0.951, lat=87.7ms, cost=11.25, energy=1.260, load=0.00)",
+        "scores": {
+          "新疆": 0.0,
+          "重庆": 0.782159,
+          "香港": 0.896839
+        },
+        "s_t": 0.9506666666666668
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T03",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.014291959814727306,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T04",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 46.2,
+        "cost": 25.0,
+        "energy": 6.384,
+        "green_ratio": 0.7,
+        "compute_ms": 0.025874993298202753,
+        "reason": "动态权重多目标最优：Score=0.1088 (S(t)=1.728, lat=46.2ms, cost=25.00, energy=6.384, load=0.33)",
+        "scores": {
+          "海南": 0.108788,
+          "香港": 0.282646,
+          "重庆": 0.321722,
+          "新疆": 1.293174,
+          "新加坡": 1.395094
+        },
+        "s_t": 1.7280000000000002
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T05",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 94.467,
+        "cost": 15.9,
+        "energy": 1.512,
+        "green_ratio": 0.85,
+        "compute_ms": 0.017291982658207417,
+        "reason": "动态权重多目标最优：Score=0.0250 (S(t)=0.826, lat=94.5ms, cost=15.90, energy=1.512, load=0.25)",
+        "scores": {
+          "新疆": 0.025
+        },
+        "s_t": 0.8255757575757575
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T06",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 45.667,
+        "cost": 32.0,
+        "energy": 8.512,
+        "green_ratio": 0.6,
+        "compute_ms": 0.013375014532357454,
+        "reason": "动态权重多目标最优：Score=0.1000 (S(t)=1.467, lat=45.7ms, cost=32.00, energy=8.512, load=0.00)",
+        "scores": {
+          "香港": 0.1,
+          "新加坡": 1.175279
+        },
+        "s_t": 1.4669565217391303
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T07",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 58.2,
+        "cost": 34.2,
+        "energy": 15.552,
+        "green_ratio": 0.55,
+        "compute_ms": 0.017915968783199787,
+        "reason": "动态权重多目标最优：Score=0.0471 (S(t)=2.062, lat=58.2ms, cost=34.20, energy=15.552, load=0.00)",
+        "scores": {
+          "重庆": 0.047073,
+          "香港": 0.187366,
+          "新加坡": 1.611313
+        },
+        "s_t": 2.061818181818182
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T08",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 38.0,
+        "cost": 11.5,
+        "energy": 2.52,
+        "green_ratio": 0.7,
+        "compute_ms": 0.025374989490956068,
+        "reason": "动态权重多目标最优：Score=0.1391 (S(t)=0.654, lat=38.0ms, cost=11.50, energy=2.520, load=0.67)",
+        "scores": {
+          "海南": 0.139053,
+          "香港": 0.219619,
+          "重庆": 0.228445,
+          "新疆": 0.538389,
+          "新加坡": 0.609109
+        },
+        "s_t": 0.6537096774193548
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T09",
+        "selected": "新疆",
+        "status": "SCHEDULED",
+        "latency_ms": 99.333,
+        "cost": 24.0,
+        "energy": 2.88,
+        "green_ratio": 0.85,
+        "compute_ms": 0.01491600414738059,
+        "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.282, lat=99.3ms, cost=24.00, energy=2.880, load=0.50)",
+        "scores": {
+          "新疆": 0.05
+        },
+        "s_t": 1.282142857142857
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T10",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 33.4,
+        "cost": 15.7,
+        "energy": 3.584,
+        "green_ratio": 0.65,
+        "compute_ms": 0.02116599353030324,
+        "reason": "动态权重多目标最优：Score=0.0745 (S(t)=1.825, lat=33.4ms, cost=15.70, energy=3.584, load=0.00)",
+        "scores": {
+          "新加坡": 0.074468,
+          "海南": 0.53792,
+          "香港": 0.750181,
+          "重庆": 1.550434
+        },
+        "s_t": 1.8246315789473684
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T11",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 51.6,
+        "cost": 21.6,
+        "energy": 9.216,
+        "green_ratio": 0.55,
+        "compute_ms": 0.016790989320725203,
+        "reason": "动态权重多目标最优：Score=0.1425 (S(t)=1.649, lat=51.6ms, cost=21.60, energy=9.216, load=0.30)",
+        "scores": {
+          "重庆": 0.14254,
+          "香港": 0.186806,
+          "新加坡": 1.317274
+        },
+        "s_t": 1.6493055555555554
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T12",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.8,
+        "cost": 30.7,
+        "energy": 8.064,
+        "green_ratio": 0.65,
+        "compute_ms": 0.015208031982183456,
+        "reason": "动态权重多目标最优：Score=0.0083 (S(t)=1.278, lat=38.8ms, cost=30.70, energy=8.064, load=0.08)",
+        "scores": {
+          "新加坡": 0.008333,
+          "香港": 1.16151
+        },
+        "s_t": 1.2776399999999999
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T13",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 61.0,
+        "cost": 37.6,
+        "energy": 16.5888,
+        "green_ratio": 0.55,
+        "compute_ms": 0.014290970284491777,
+        "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.697, lat=61.0ms, cost=37.60, energy=16.589, load=0.50)",
+        "scores": {
+          "重庆": 0.05
+        },
+        "s_t": 1.6968750000000001
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T14",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.00891595846042037,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T15",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.024457986000925303,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T16",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 37.6,
+        "cost": 28.8,
+        "energy": 7.616,
+        "green_ratio": 0.65,
+        "compute_ms": 0.01795799471437931,
+        "reason": "动态权重多目标最优：Score=0.0250 (S(t)=1.651, lat=37.6ms, cost=28.80, energy=7.616, load=0.25)",
+        "scores": {
+          "新加坡": 0.025,
+          "香港": 0.713278,
+          "重庆": 1.423663
+        },
+        "s_t": 1.6512000000000002
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T17",
+        "selected": "海南",
+        "status": "SCHEDULED",
+        "latency_ms": 40.8,
+        "cost": 14.0,
+        "energy": 2.688,
+        "green_ratio": 0.7,
+        "compute_ms": 0.018708000425249338,
+        "reason": "动态权重多目标最优：Score=0.1075 (S(t)=0.763, lat=40.8ms, cost=14.00, energy=2.688, load=0.83)",
+        "scores": {
+          "海南": 0.107471,
+          "香港": 0.519435,
+          "重庆": 0.722404
+        },
+        "s_t": 0.7632
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T18",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 48.467,
+        "cost": 36.5,
+        "energy": 8.9984,
+        "green_ratio": 0.6,
+        "compute_ms": 0.023917004000395536,
+        "reason": "动态权重多目标最优：Score=0.1250 (S(t)=1.375, lat=48.5ms, cost=36.50, energy=8.998, load=0.25)",
+        "scores": {
+          "香港": 0.125,
+          "新加坡": 1.149883
+        },
+        "s_t": 1.3754661016949152
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T19",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 49.4,
+        "cost": 58.3,
+        "energy": 15.456,
+        "green_ratio": 0.65,
+        "compute_ms": 0.0191659783013165,
+        "reason": "动态权重多目标最优：Score=0.0417 (S(t)=1.837, lat=49.4ms, cost=58.30, energy=15.456, load=0.42)",
+        "scores": {
+          "新加坡": 0.041667,
+          "香港": 1.596789
+        },
+        "s_t": 1.8373660714285716
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T20",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 125.667,
+        "cost": 26.0,
+        "energy": 3.456,
+        "green_ratio": 0.55,
+        "compute_ms": 0.014666991773992777,
+        "reason": "动态权重多目标最优：Score=0.0800 (S(t)=0.937, lat=125.7ms, cost=26.00, energy=3.456, load=0.80)",
+        "scores": {
+          "重庆": 0.08
+        },
+        "s_t": 0.9373437499999999
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T21",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 52.467,
+        "cost": 42.8,
+        "energy": 10.2144,
+        "green_ratio": 0.6,
+        "compute_ms": 0.09204103844240308,
+        "reason": "动态权重多目标最优：Score=0.1500 (S(t)=1.662, lat=52.5ms, cost=42.80, energy=10.214, load=0.50)",
+        "scores": {
+          "香港": 0.15,
+          "新加坡": 1.384613
+        },
+        "s_t": 1.6615909090909091
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T22",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 31.0,
+        "cost": 13.3,
+        "energy": 3.136,
+        "green_ratio": 0.65,
+        "compute_ms": 0.02258300082758069,
+        "reason": "动态权重多目标最优：Score=0.0667 (S(t)=1.927, lat=31.0ms, cost=13.30, energy=3.136, load=0.67)",
+        "scores": {
+          "新加坡": 0.066667,
+          "香港": 0.85015,
+          "重庆": 1.635816
+        },
+        "s_t": 1.9269886363636362
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T23",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0070829992182552814,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T24",
+        "selected": "新加坡",
+        "status": "SCHEDULED",
+        "latency_ms": 38.4,
+        "cost": 30.0,
+        "energy": 7.84,
+        "green_ratio": 0.65,
+        "compute_ms": 0.015249999705702066,
+        "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.188, lat=38.4ms, cost=30.00, energy=7.840, load=0.75)",
+        "scores": {
+          "新加坡": 0.075,
+          "香港": 1.145804
+        },
+        "s_t": 1.188
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T25",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.003334018401801586,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T26",
+        "selected": "重庆",
+        "status": "SCHEDULED",
+        "latency_ms": 46.2,
+        "cost": 12.2,
+        "energy": 4.032,
+        "green_ratio": 0.55,
+        "compute_ms": 0.019499973859637976,
+        "reason": "动态权重多目标最优：Score=0.1702 (S(t)=0.779, lat=46.2ms, cost=12.20, energy=4.032, load=0.90)",
+        "scores": {
+          "重庆": 0.170217,
+          "香港": 0.235432,
+          "新加坡": 0.762429
+        },
+        "s_t": 0.7786666666666667
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T27",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0024999608285725117,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T28",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.006208021659404039,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T29",
+        "selected": "香港",
+        "status": "SCHEDULED",
+        "latency_ms": 48.2,
+        "cost": 36.0,
+        "energy": 9.2416,
+        "green_ratio": 0.6,
+        "compute_ms": 0.010417017620056868,
+        "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.767, lat=48.2ms, cost=36.00, energy=9.242, load=0.75)",
+        "scores": {
+          "香港": 0.075
+        },
+        "s_t": 1.767058823529412
+      },
+      {
+        "algorithm": "本文方法（动态权重多目标调度）",
+        "task_id": "T30",
+        "selected": null,
+        "status": "UNSCHEDULED",
+        "latency_ms": null,
+        "cost": null,
+        "energy": null,
+        "green_ratio": null,
+        "compute_ms": 0.0026249908842146397,
+        "reason": "无满足硬约束的候选节点",
+        "scores": {},
+        "s_t": 1.0
+      }
+    ]
+  },
+  "nodes": {
+    "重庆": {
+      "region": "重庆",
+      "name": "重庆",
+      "gpu_capacity": 10,
+      "gpu_free": 10,
+      "gpu_cost": 2.0,
+      "cost": 2.0,
+      "green_ratio": 0.55,
+      "green_factor": 0.55,
+      "has_tee": false,
+      "region_tag": "china",
+      "load": 0.0,
+      "healthy": true,
+      "link_up": true,
+      "reachable": true,
+      "free_gb": 0.0,
+      "gpus": [],
+      "model": "仿真·异构 GPU",
+      "agent_url": "",
+      "last_error": "",
+      "simulated": true,
+      "rtt_ms": 20
+    },
+    "海南": {
+      "region": "海南",
+      "name": "海南",
+      "gpu_capacity": 6,
+      "gpu_free": 6,
+      "gpu_cost": 2.5,
+      "cost": 2.5,
+      "green_ratio": 0.7,
+      "green_factor": 0.7,
+      "has_tee": false,
+      "region_tag": "china",
+      "load": 0.0,
+      "healthy": true,
+      "link_up": true,
+      "reachable": true,
+      "free_gb": 0.0,
+      "gpus": [],
+      "model": "仿真·RTX 类",
+      "agent_url": "",
+      "last_error": "",
+      "simulated": true,
+      "rtt_ms": 15
+    },
+    "香港": {
+      "region": "香港",
+      "name": "香港",
+      "gpu_capacity": 8,
+      "gpu_free": 8,
+      "gpu_cost": 3.0,
+      "cost": 3.0,
+      "green_ratio": 0.6,
+      "green_factor": 0.6,
+      "has_tee": true,
+      "region_tag": "offshore",
+      "load": 0.0,
+      "healthy": true,
+      "link_up": true,
+      "reachable": true,
+      "free_gb": 0.0,
+      "gpus": [],
+      "model": "仿真·离岸 TEE",
+      "agent_url": "",
+      "last_error": "",
+      "simulated": true,
+      "rtt_ms": 15
+    },
+    "新加坡": {
+      "region": "新加坡",
+      "name": "新加坡",
+      "gpu_capacity": 12,
+      "gpu_free": 12,
+      "gpu_cost": 3.5,
+      "cost": 3.5,
+      "green_ratio": 0.65,
+      "green_factor": 0.65,
+      "has_tee": true,
+      "region_tag": "sea",
+      "load": 0.0,
+      "healthy": true,
+      "link_up": true,
+      "reachable": true,
+      "free_gb": 0.0,
+      "gpus": [],
+      "model": "仿真·离岸 TEE",
+      "agent_url": "",
+      "last_error": "",
+      "simulated": true,
+      "rtt_ms": 25
+    },
+    "新疆": {
+      "region": "新疆",
+      "name": "新疆",
+      "gpu_capacity": 4,
+      "gpu_free": 4,
+      "gpu_cost": 1.5,
+      "cost": 1.5,
+      "green_ratio": 0.85,
+      "green_factor": 0.85,
+      "has_tee": false,
+      "region_tag": "central_asia",
+      "load": 0.0,
+      "healthy": true,
+      "link_up": true,
+      "reachable": true,
+      "free_gb": 0.0,
+      "gpus": [],
+      "model": "仿真·绿电节点",
+      "agent_url": "",
+      "last_error": "",
+      "simulated": true,
+      "rtt_ms": 30
+    }
+  }
+}
