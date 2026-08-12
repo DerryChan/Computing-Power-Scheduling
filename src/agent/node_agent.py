@@ -240,6 +240,7 @@ class AgentState:
             self.tasks[task_id].update({"status": "RUNNING", "progress": 15, "message": f"{workload} running", "updated_at": now_iso()})
         self.log("task_start", task_id=task_id, workload=workload, gpu=gpu_index)
 
+        t0 = time.time()
         try:
             with open(log_file, "w", encoding="utf-8") as lf:
                 proc = subprocess.Popen(cmd, stdout=lf, stderr=subprocess.STDOUT, env=env, cwd=str(out_dir))
@@ -283,6 +284,21 @@ class AgentState:
                 result_sha = metrics.get("result_sha256") or hashlib.sha256(stdout.encode()).hexdigest()
                 ok = rc == 0 and bool(metrics.get("ok", True))
 
+            # ResNet 分片通常 1–3 秒结束，利用率瞬间回 0。按 duration_sec 补一段 GEMM 占卡，方便演示观测。
+            if ok and workload == "resnet" and not self.tasks[task_id].get("cancel_requested"):
+                elapsed = time.time() - t0
+                want = int(task.get("duration_sec") or 0)
+                hold = max(0, min(15, want - int(elapsed)))
+                hold = max(hold, min(15, int(task.get("hold_sec") or 0)))
+                if hold >= 2:
+                    with self.lock:
+                        self.tasks[task_id].update({
+                            "progress": 92,
+                            "message": f"resnet done · holding GPU {hold}s for util",
+                            "updated_at": now_iso(),
+                        })
+                    self._hold_gpu(task, env, out_dir, hold)
+
             if ok:
                 with self.lock:
                     self.tasks[task_id].update({
@@ -305,6 +321,43 @@ class AgentState:
                     "status": "FAILED", "progress": 100, "finished_at": now_iso(),
                     "message": str(exc), "reason": "exception", "updated_at": now_iso(),
                 })
+
+    def _hold_gpu(self, task: dict[str, Any], env: dict[str, str], out_dir: Path, hold_sec: int) -> None:
+        """Keep GPU busy briefly after a short ResNet shard so utilization is observable."""
+        load_py = BUNDLE / "app" / "gpu_load.py"
+        if not load_py.is_file():
+            time.sleep(hold_sec)
+            return
+        reserve = max(512, min(8192, int(float(task.get("memory_gb") or 4) * 1024)))
+        cmd = [
+            PYTHON, str(load_py),
+            "--reserve-mb", str(reserve),
+            "--duration", str(int(hold_sec)),
+            "--gpu", "0",
+            "--gemm",
+        ]
+        log_file = Path(task["log_file"])
+        with open(log_file, "a", encoding="utf-8") as lf:
+            lf.write(f"\n# hold_gpu {hold_sec}s reserve_mb={reserve}\n")
+            proc = subprocess.Popen(cmd, stdout=lf, stderr=subprocess.STDOUT, env=env, cwd=str(out_dir))
+        with self.lock:
+            self.tasks[task["task_id"]]["pid"] = proc.pid
+        while proc.poll() is None:
+            time.sleep(0.4)
+            with self.lock:
+                if self.tasks[task["task_id"]].get("cancel_requested"):
+                    try:
+                        proc.terminate()
+                    except Exception:
+                        pass
+                    break
+        try:
+            proc.wait(timeout=3)
+        except Exception:
+            try:
+                proc.kill()
+            except Exception:
+                pass
 
     def _resnet_cmd(self, task: dict[str, Any], gpu_visible: int = 0) -> list[str] | None:
         weights = BUNDLE / "weights" / "resnet50_frozen.pth"

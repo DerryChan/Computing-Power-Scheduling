@@ -3,23 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>跨境算力 · 自适应动态权重调度</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>L1 算力调度实时控制台</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="topbar">
     <div>
-      <div class="eyebrow">DIGITAL SILK ROAD · CROSS-BORDER SCHEDULER</div>
-      <h1>自适应动态权重多目标调度</h1>
-      <p>硬约束合规过滤 · 最小-最大规范化 · S(t) 时延敏感自适应 · 五节点算网</p>
+      <div class="eyebrow">CROSS-REGION COMPUTE FABRIC</div>
+      <h1>L1 算力调度实时控制台</h1>
+      <p>新加坡控制面 · 动态权重调度 · 海南/重庆真实 GPU 执行 · 结果汇聚</p>
     </div>
     <div class="top-actions">
-      <span id="modeBadge" class="badge">HYBRID</span>
+      <span id="modeBadge" class="badge">SIMULATION</span>
       <span id="connection" class="connection"><i></i>连接中</span>
-      <button id="paperBtn" class="button ghost">跑对比实验</button>
       <button id="resetBtn" class="button ghost">重置</button>
     </div>
   </header>
@@ -27,42 +23,34 @@
   <main class="shell">
     <section class="notice">
       <span class="notice-dot"></span>
-      <span id="realityNote">加载调度引擎说明…</span>
-      <label class="token-field">访问令牌 <input id="tokenInput" type="password" placeholder="Bearer Token"></label>
+      <span id="realityNote">当前为实时仿真模式：调度决策与 GPU 状态由本服务生成，不驱动三地真实 GPU 任务。</span>
+      <label class="token-field">访问令牌 <input id="tokenInput" type="password" placeholder="仅在服务端配置令牌时填写"></label>
     </section>
 
     <section class="stats-grid">
-      <div class="stat-card"><span>父任务</span><strong id="statTotal">0</strong><small>已提交</small></div>
-      <div class="stat-card"><span>成功</span><strong id="statSucceeded" class="green">0</strong><small>已汇聚</small></div>
-      <div class="stat-card"><span>运行中</span><strong id="statRunning" class="blue">0</strong><small>执行中</small></div>
-      <div class="stat-card"><span>排队/失败</span><strong id="statQueue" class="orange">0 / 0</strong><small>需关注</small></div>
+      <div class="stat-card"><span>父任务总数</span><strong id="statTotal">0</strong><small>已提交任务</small></div>
+      <div class="stat-card"><span>成功任务</span><strong id="statSucceeded" class="green">0</strong><small>结果已汇聚</small></div>
+      <div class="stat-card"><span>运行中</span><strong id="statRunning" class="blue">0</strong><small>实时执行</small></div>
+      <div class="stat-card"><span>排队/失败</span><strong id="statQueue" class="orange">0 / 0</strong><small>需要关注</small></div>
       <div class="stat-card"><span>成功率</span><strong id="statRate">—</strong><small>父任务口径</small></div>
-      <div class="stat-card accent"><span>默认权重</span><strong id="statWeights">wl0.733</strong><small>wc/we/wld=0.1</small></div>
     </section>
 
     <section class="layout-grid">
       <div class="panel submit-panel">
-        <div class="panel-head"><div><span class="panel-kicker">DISPATCH</span><h2>提交调度</h2></div><span class="pulse">● LIVE</span></div>
+        <div class="panel-head"><div><span class="panel-kicker">LIVE TEST</span><h2>提交调度测试</h2></div><span class="pulse">● READY</span></div>
         <form id="taskForm">
           <label>测试场景
             <select id="scenario"></select>
           </label>
           <div class="form-row">
             <label>分片数 <input id="shards" type="number" min="1" max="16" value="8"></label>
-            <label>显存（GB） <input id="memory" type="number" min="1" max="24" value="8"></label>
+            <label>显存需求（GB） <input id="memory" type="number" min="1" max="24" value="8"></label>
           </div>
           <label>调度策略
-            <select id="mode">
-              <option>动态权重多目标</option>
-              <option>海南优先</option>
-              <option>最小延迟</option>
-              <option>最小成本</option>
-              <option>静态本地</option>
-              <option>先到先服务</option>
-            </select>
+            <select id="mode"><option>动态权重多目标</option><option>海南优先</option><option>最小延迟</option><option>最小成本</option><option>加权平均</option></select>
           </label>
           <label>父任务ID（可选） <input id="taskId" type="text" placeholder="自动生成 POC-LIVE-xxxx"></label>
-          <button class="button primary" type="submit"><span>▶</span> 提交并观察</button>
+          <button class="button primary" type="submit"><span>▶</span> 提交并实时观察</button>
         </form>
         <div class="scenario-card" id="scenarioHint">
           <div class="scenario-code" id="scenarioCode">DT01</div>
@@ -72,43 +60,16 @@
         </div>
       </div>
 
-      <div class="panel decision-panel">
-        <div class="panel-head"><div><span class="panel-kicker">SCORE TRACE</span><h2>最近一次打分解释</h2></div><span id="decisionMeta" class="subtle">等待调度</span></div>
-        <div id="decisionBody" class="decision-body">
-          <div class="empty">提交任务后，这里展示 Score = wl·S(t)·Nlat + wc·Ncost + we·Nenergy + wld·Load</div>
-        </div>
-        <div class="panel-head sub"><div><span class="panel-kicker">AUDIT</span><h2>事件流</h2></div><span id="lastUpdate">—</span></div>
+      <div class="panel event-panel">
+        <div class="panel-head"><div><span class="panel-kicker">AUDIT STREAM</span><h2>实时事件流</h2></div><span id="lastUpdate">等待数据</span></div>
         <div id="events" class="events"></div>
-      </div>
-    </section>
-
-    <section class="panel paper-panel">
-      <div class="panel-head">
-        <div><span class="panel-kicker">BENCH</span><h2>对比实验（5 节点 × 30 任务）</h2></div>
-        <span class="subtle">基线：静态本地 / FCFS / 最小延迟 / 最小成本 / GA</span>
-      </div>
-      <div class="paper-grid">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>算法</th><th>成功率</th><th>平均时延</th><th>平均成本</th><th>能耗</th><th>计算(ms)</th><th>失败任务</th></tr>
-            </thead>
-            <tbody id="paperRows">
-              <tr><td colspan="7" class="empty">点击右上角「跑对比实验」生成对比表</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="paper-side">
-          <canvas id="chartRadar" width="420" height="320"></canvas>
-          <div id="paperNote" class="paper-note">消融结果将在实验返回后展示。</div>
-        </div>
       </div>
     </section>
 
     <section class="panel charts-panel">
       <div class="panel-head">
-        <div><span class="panel-kicker">LIVE METRICS</span><h2>实时监控</h2></div>
-        <span class="subtle">显存 / 利用率 / 分片队列</span>
+        <div><span class="panel-kicker">LIVE METRICS</span><h2>实时折线监控</h2></div>
+        <span class="subtle">显存可用 / GPU利用率 / 分片队列 · 最近约 3 分钟</span>
       </div>
       <div class="charts-grid">
         <div class="chart-card">
@@ -117,7 +78,7 @@
           <div class="chart-legend"><span class="lg hn"></span>海南 <span class="lg cq"></span>重庆</div>
         </div>
         <div class="chart-card">
-          <div class="chart-title">平均 GPU 利用率（%）</div>
+          <div class="chart-title">平均 GPU 利用率（%）· 淡线为会话峰值</div>
           <canvas id="chartUtil" width="640" height="220"></canvas>
           <div class="chart-legend"><span class="lg hn"></span>海南 <span class="lg cq"></span>重庆</div>
         </div>
@@ -130,18 +91,34 @@
     </section>
 
     <section class="panel nodes-panel">
-      <div class="panel-head"><div><span class="panel-kicker">FABRIC</span><h2>算力节点</h2></div><span class="subtle">真实 agent + 仿真节点</span></div>
+      <div class="panel-head"><div><span class="panel-kicker">RESOURCE POOL</span><h2>两地资源状态</h2></div><span class="subtle">利用率条：实心=实时 · 浅底/竖线=会话峰 · 另有显存占用条</span></div>
       <div id="nodes" class="nodes-grid"></div>
     </section>
 
     <section class="panel tasks-panel">
-      <div class="panel-head"><div><span class="panel-kicker">TIMELINE</span><h2>任务与分片</h2></div><span class="subtle">最新优先</span></div>
+      <div class="panel-head"><div><span class="panel-kicker">DISPATCH TIMELINE</span><h2>任务与分片结果</h2></div><span class="subtle">最新任务优先</span></div>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>任务</th><th>类型</th><th>状态</th><th>落点</th><th>进度</th><th>结果 / 原因</th></tr></thead>
-          <tbody id="taskRows"></tbody>
-        </table>
+        <table><thead><tr><th>任务</th><th>类型</th><th>状态</th><th>节点 / GPU</th><th>进度</th><th>结果 / 原因</th></tr></thead><tbody id="taskRows"></tbody></table>
       </div>
+    </section>
+
+    <section class="panel outcome-panel">
+      <div class="panel-head">
+        <div><span class="panel-kicker">OUTCOME</span><h2>测试收益与效果</h2></div>
+        <span class="subtle" id="outcomeMeta">跑完一个场景后这里会汇总成本/时延/利用率收益</span>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-main">
+          <div id="outcomeHeadline" class="outcome-headline">尚未完成测试</div>
+          <div id="outcomeBullets" class="outcome-bullets"><div class="outcome-empty">提交并完成任务后，将展示相对单边基线的节省、落点分布与峰值利用率。</div></div>
+        </div>
+        <div class="outcome-side">
+          <canvas id="chartOutcome" height="200"></canvas>
+          <div class="chart-legend"><span class="lg green"></span>实际 <span class="lg orange"></span>单边基线</div>
+          <div id="outcomePeak" class="outcome-peak">峰值利用率：—</div>
+        </div>
+      </div>
+      <div id="outcomeHistory" class="outcome-history"></div>
     </section>
   </main>
   <script src="/app.js"></script>

@@ -69,15 +69,16 @@ SCENARIOS: dict[str, dict[str, Any]] = {
     "dt01_cross_region": {
         "id": "dt01_cross_region", "code": "DT01", "level": "A",
         "title": "两地共同执行的分片批量推理",
-        "summary": "父任务拆成 8 个 ResNet 分片，海南与重庆真实 GPU 并行执行，新加坡控制面汇聚 predictions。",
+        "summary": "父任务拆成 8 个 ResNet 分片，两地并行；推理后短时占卡，便于观察利用率。",
         "detail": (
             "对应报告 DT01 / TC13 / TC14 / TC15。\n"
             "真实调度：S01/S02 亲和海南，S03/S04 亲和重庆，其余按策略自动选择；"
-            "每个分片 workload=resnet、shard_manifest=manifest_part-XX.csv；"
+            "每个分片先跑 ResNet（通常 1–3 秒），再按 duration_sec 补一段 GEMM 占卡（最多约 15 秒）便于观察利用率；"
             "完成后从 agent 拉取 predictions.jsonl 并在控制面 merge。\n"
-            "观察：两地 nvidia-smi 显存变化、分片落点、合并结果 SHA 与参考一致性。"
+            "观察：两地利用率条/峰值、分片落点、合并结果 SHA。\n"
+            "若只要更长占卡，可选场景 DEMO（gpu_load ≈25 秒）。"
         ),
-        "defaults": {"shards": 8, "memory_gb": 8, "mode": "动态权重多目标", "duration_sec": 30},
+        "defaults": {"shards": 8, "memory_gb": 8, "mode": "动态权重多目标", "duration_sec": 18},
     },
     "dt02_divert": {
         "id": "dt02_divert", "code": "DT02", "level": "A",
@@ -307,12 +308,22 @@ SCENARIOS: dict[str, dict[str, Any]] = {
         ),
         "defaults": {"shards": 6, "memory_gb": 8, "mode": "海南优先", "duration_sec": 20},
     },
+    "demo_util": {
+        "id": "demo_util", "code": "DEMO", "level": "A",
+        "title": "利用率与收益可视化演示",
+        "summary": "两地并行 gpu_load 占位约 25 秒，便于看清利用率爬升，并在结束后展示成本/时延收益摘要。",
+        "detail": (
+            "专门用于演示：ResNet 推理仅 1–2 秒，瞬时利用率容易被 1 秒采样漏掉；\n"
+            "本场景改用 gpu_load 持续占显存，折线与峰值更明显；完成后右侧/下方收益面板会给出相对单边基线的节省。"
+        ),
+        "defaults": {"shards": 4, "memory_gb": 10, "mode": "动态权重多目标", "duration_sec": 25},
+    },
     "normal": {
         "id": "normal", "code": "CUSTOM", "level": "—",
         "title": "自定义真实 ResNet 调度",
         "summary": "按策略把 ResNet 分片派到真实节点，可配合节点离线/断链按钮。",
         "detail": "自由测试入口：可改分片数、显存和策略；默认 workload=resnet。",
-        "defaults": {"shards": 2, "memory_gb": 8, "mode": "海南优先", "duration_sec": 30},
+        "defaults": {"shards": 2, "memory_gb": 8, "mode": "动态权重多目标", "duration_sec": 30},
     },
 }
 
@@ -566,6 +577,9 @@ class SchedulerState:
         self.metrics: list[dict[str, Any]] = []
         self.sequence = 0
         self.agent_urls = {"海南": HAINAN_URL, "重庆": CHONGQING_URL}
+        # 反向隧道偶发抖动：连续失败 N 次才标 Agent Down，避免误杀亲和分片
+        self._poll_fail_streak: dict[str, int] = {"海南": 0, "重庆": 0}
+        self._poll_fail_threshold = 3
         self.nodes: dict[str, dict[str, Any]] = {
             "海南": self._empty_node("海南", "RTX 4090", 15, 2.5, agent=True, green=0.70, tee=False),
             "重庆": self._empty_node("重庆", "RTX 4070", 20, 2.0, agent=True, green=0.55, tee=False),
@@ -600,6 +614,10 @@ class SchedulerState:
         self.evidence = EvidenceWriter(EVIDENCE_ROOT)
         self.paper_cache: dict[str, Any] | None = None
         self.last_decision: dict[str, Any] | None = None
+        self.last_outcome: dict[str, Any] | None = None
+        self.outcomes: list[dict[str, Any]] = []
+        self._peak_util = {"海南": 0.0, "重庆": 0.0}
+        self._gpu_peak_util: dict[str, float] = {}
         self._stop = False
         self.reset(soft=True)
         threading.Thread(target=self._poll_loop, daemon=True).start()
@@ -630,8 +648,12 @@ class SchedulerState:
             self.events = []
             if not soft:
                 self.metrics = []
+                self.outcomes = []
+                self.last_outcome = None
             self.sequence = 0
             self.hainan_unreachable = False
+            self._peak_util = {"海南": 0.0, "重庆": 0.0}
+            self._gpu_peak_util = {}
             self.log("SYSTEM", "RESET", "真实 ResNet 调度控制面已重置")
 
     def log(self, task_id: str, event: str, message: str, **extra: Any) -> None:
@@ -665,16 +687,35 @@ class SchedulerState:
                         "free_gb": 0.0,
                         "gpu_free": 0,
                     })
+                    self._poll_fail_streak[region] = self._poll_fail_threshold
                 continue
-            data = http_json("GET", f"{url}/v1/resources", timeout=3.0)
+            # 海南经反向隧道，超时略放宽；重庆直连保持适中
+            timeout = 8.0 if region == "海南" else 5.0
+            data = http_json("GET", f"{url}/v1/resources", timeout=timeout)
             with self.lock:
                 node = self.nodes[region]
                 if data.get("_unreachable") or (data.get("error") and "gpus" not in data):
+                    streak = self._poll_fail_streak.get(region, 0) + 1
+                    self._poll_fail_streak[region] = streak
+                    err = data.get("error") or "unreachable"
+                    # 未达阈值：保留上次快照，仅挂告警，不立刻 AGENT DOWN
+                    if streak < self._poll_fail_threshold:
+                        node["last_error"] = f"探测抖动({streak}/{self._poll_fail_threshold}): {err}"
+                        continue
                     node["reachable"] = False
                     node["healthy"] = False
-                    node["last_error"] = data.get("error") or "unreachable"
+                    node["last_error"] = err
                     continue
+                self._poll_fail_streak[region] = 0
                 gpus = [g for g in (data.get("gpus") or []) if "index" in g]
+                # nvidia-smi 瞬时利用率任务结束后立刻归零；按 GPU 累计会话峰值供卡片展示
+                for g in gpus:
+                    gid = str(g.get("id") or f"{region}-GPU{int(g.get('index', 0)) + 1}")
+                    g["id"] = gid
+                    cur = float(g.get("utilization_pct") or 0)
+                    peak = max(float(self._gpu_peak_util.get(gid, 0) or 0), cur)
+                    self._gpu_peak_util[gid] = peak
+                    g["peak_utilization_pct"] = round(peak, 1)
                 node.update({
                     "reachable": True,
                     "healthy": bool(data.get("healthy", True)),
@@ -708,6 +749,8 @@ class SchedulerState:
                 "chongqing_free_gb": float(cq.get("free_gb") or 0),
                 "hainan_util_pct": util(hn),
                 "chongqing_util_pct": util(cq),
+                "hainan_peak_util_pct": self._peak_util["海南"],
+                "chongqing_peak_util_pct": self._peak_util["重庆"],
                 "running": sum(1 for x in children if x.get("status") == "RUNNING"),
                 "queued": sum(1 for x in children if x.get("status") == "QUEUED"),
                 "succeeded_shards": sum(1 for x in children if x.get("status") == "SUCCEEDED"),
@@ -719,16 +762,28 @@ class SchedulerState:
                     1,
                 ),
             }
+            self._peak_util["海南"] = max(self._peak_util["海南"], float(point["hainan_util_pct"] or 0))
+            self._peak_util["重庆"] = max(self._peak_util["重庆"], float(point["chongqing_util_pct"] or 0))
+            point["hainan_peak_util_pct"] = self._peak_util["海南"]
+            point["chongqing_peak_util_pct"] = self._peak_util["重庆"]
             self.metrics.append(point)
             self.metrics = self.metrics[-180:]
 
     def node_snapshot(self, node: dict[str, Any]) -> dict[str, Any]:
         gpus = []
+        region_peak = 0.0
         for gpu in node.get("gpus") or []:
+            gid = str(gpu.get("id") or "")
+            cur = float(gpu.get("utilization_pct") or 0)
+            peak = float(gpu.get("peak_utilization_pct") or self._gpu_peak_util.get(gid, 0) or 0)
+            peak = max(peak, cur)
+            region_peak = max(region_peak, peak)
             gpus.append({
                 **gpu,
                 "used_gb": round(float(gpu.get("total_gb", 0)) - float(gpu.get("free_gb", 0)), 2),
                 "load_pct": gpu.get("load_pct", 0),
+                "utilization_pct": cur,
+                "peak_utilization_pct": round(peak, 1),
             })
         return {
             "region": node["region"], "model": node.get("model"), "rtt_ms": node.get("rtt_ms"),
@@ -740,6 +795,7 @@ class SchedulerState:
             "gpu_capacity": int(node.get("gpu_capacity") or len(gpus)),
             "gpu_free": int(node.get("gpu_free") or sum(1 for g in gpus if float(g.get("free_gb", 0)) >= 1)),
             "region_tag": node.get("region_tag") or "",
+            "peak_utilization_pct": round(region_peak, 1),
         }
 
     def choose(self, memory_gb: float, mode: str, affinity: str | None = None) -> tuple[str | None, dict[str, Any]]:
@@ -1007,7 +1063,10 @@ class SchedulerState:
         memory = float(parent["memory_gb"])
         duration = int(parent.get("duration_sec") or 30)
         prediction_files: list[Path] = []
-        self.set_task(parent_id, status="RUNNING", message="正在向真实节点分发 ResNet 分片")
+        with self.lock:
+            self._peak_util = {"海南": 0.0, "重庆": 0.0}
+            self._gpu_peak_util = {}
+        self.set_task(parent_id, status="RUNNING", message="正在向真实节点分发任务分片")
         self.refresh_nodes()
 
         if scenario == "tc06_resource_discover":
@@ -1039,9 +1098,9 @@ class SchedulerState:
         for i in range(1, count + 1):
             child_id = f"{parent_id}-S{i:02d}"
             affinity = None
-            if scenario in ("dt01_cross_region", "dt04_otn_outage", "tc01_ingress", "dt05_isolation", "tc20_return") and i <= 2:
+            if scenario in ("dt01_cross_region", "dt04_otn_outage", "tc01_ingress", "dt05_isolation", "tc20_return", "demo_util") and i <= 2:
                 affinity = "海南"
-            elif scenario in ("dt01_cross_region", "dt04_otn_outage", "tc01_ingress", "dt05_isolation", "tc20_return") and i in (3, 4):
+            elif scenario in ("dt01_cross_region", "dt04_otn_outage", "tc01_ingress", "dt05_isolation", "tc20_return", "demo_util") and i in (3, 4):
                 affinity = "重庆"
 
             if scenario == "dt02_divert" and i == 2:
@@ -1064,10 +1123,26 @@ class SchedulerState:
             if scenario == "tc17_cancel":
                 workload = "gpu_load"
                 run_duration = max(duration, 120)
+            elif scenario == "demo_util":
+                workload = "gpu_load"
+                run_duration = max(duration, 25)
 
             self.set_task(child_id, status="SCHEDULING", updated_at=now_iso(), message="查询真实节点资源并做硬约束过滤")
             self.refresh_nodes()
             region, decision = self.choose(memory, mode, affinity)
+            # 隧道偶发超时：短暂重试一次，避免亲和分片被瞬时抖动打成 UNSCHEDULED
+            if region is None:
+                rejected = decision.get("rejected") or []
+                transient = any(
+                    ("timed out" in str(r.get("reason") or "").lower())
+                    or ("探测抖动" in str(r.get("reason") or ""))
+                    or ("unreachable" in str(r.get("reason") or "").lower())
+                    for r in rejected
+                )
+                if transient:
+                    time.sleep(1.2)
+                    self.refresh_nodes()
+                    region, decision = self.choose(memory, mode, affinity)
 
             if region is None and scenario == "dt04_otn_outage" and affinity == "重庆":
                 self.set_task(
@@ -1106,6 +1181,8 @@ class SchedulerState:
                 reason=decision.get("reason"), accepted=decision.get("accepted", []),
                 rejected=decision.get("rejected", []), message=f"向{region} agent 下发 {workload}",
                 updated_at=now_iso(), progress=10, workload=workload,
+                selected_metrics=decision.get("selected_metrics") or {},
+                score=decision.get("score"),
             )
             self.log(
                 child_id, "DISPATCH", f"真实下发到{region} ({workload})",
@@ -1265,7 +1342,130 @@ class SchedulerState:
                 self.log(parent_id, "RETURN", "结果已汇聚至新加坡控制面 evidence", result_sha256=parent.get("result_sha256"))
 
         self.log(parent_id, "COMPLETE", self.tasks[parent_id]["message"], status=self.tasks[parent_id]["status"])
+        outcome = self._build_outcome(parent_id)
+        with self.lock:
+            self.tasks[parent_id]["outcome"] = outcome
+            self.last_outcome = outcome
+            self.outcomes.insert(0, outcome)
+            self.outcomes = self.outcomes[:20]
+        self.log(
+            parent_id, "OUTCOME",
+            outcome.get("headline") or "已生成收益摘要",
+            success_rate_pct=outcome.get("success_rate_pct"),
+            cost_saving_pct=outcome.get("cost_saving_pct"),
+            peak_util=outcome.get("peak_util"),
+        )
         self.evidence.write_case_evidence(self.tasks[parent_id], self.events[:30], merge_summary)
+
+    def _build_outcome(self, parent_id: str) -> dict[str, Any]:
+        """测试完成后的收益可视化数据：落点、成本/时延相对基线、峰值利用率。"""
+        with self.lock:
+            parent = dict(self.tasks[parent_id])
+            count = int(parent.get("shards") or 0)
+            children = [
+                dict(self.tasks[f"{parent_id}-S{i:02d}"])
+                for i in range(1, count + 1)
+                if f"{parent_id}-S{i:02d}" in self.tasks
+            ]
+            hn_cost = float(self.nodes["海南"].get("cost") or 2.5)
+            cq_cost = float(self.nodes["重庆"].get("cost") or 2.0)
+            hn_rtt = float(self.nodes["海南"].get("rtt_ms") or 15)
+            cq_rtt = float(self.nodes["重庆"].get("rtt_ms") or 20)
+            peak = dict(self._peak_util)
+            mode = str(parent.get("mode") or "")
+
+        ok = [c for c in children if c.get("status") == "SUCCEEDED"]
+        fail = [c for c in children if c.get("status") not in ("SUCCEEDED",)]
+        dist: dict[str, int] = {}
+        for c in ok:
+            r = str(c.get("selected_region") or "未知")
+            dist[r] = dist.get(r, 0) + 1
+
+        def shard_cost(c: dict[str, Any], region: str | None = None) -> float:
+            # 统一用节点单价估算，保证「实际 vs 单边」可比
+            reg = region or c.get("selected_region") or "海南"
+            unit = hn_cost if reg == "海南" else cq_cost
+            mem = float(c.get("memory_gb") or parent.get("memory_gb") or 8)
+            return round(unit * (mem / 8.0) * 0.35, 4)
+
+        def shard_lat(c: dict[str, Any], region: str | None = None) -> float:
+            reg = region or c.get("selected_region") or "海南"
+            m = c.get("selected_metrics") or {}
+            if region is None and m.get("latency_ms") is not None:
+                return float(m["latency_ms"])
+            return hn_rtt + 8.0 if reg == "海南" else cq_rtt + 8.0
+
+        actual_cost = round(sum(shard_cost(c) for c in ok), 4) if ok else 0.0
+        actual_lat = round(sum(shard_lat(c) for c in ok) / len(ok), 2) if ok else 0.0
+        # 反事实：全部落海南 / 全部落重庆（同成功分片数）
+        all_hn_cost = round(sum(shard_cost(c, "海南") for c in ok), 4) if ok else 0.0
+        all_cq_cost = round(sum(shard_cost(c, "重庆") for c in ok), 4) if ok else 0.0
+        all_hn_lat = round(sum(shard_lat(c, "海南") for c in ok) / len(ok), 2) if ok else 0.0
+        all_cq_lat = round(sum(shard_lat(c, "重庆") for c in ok) / len(ok), 2) if ok else 0.0
+        # 收益相对「更差单边」：成本相对更贵侧，时延相对更慢侧
+        baseline_cost = max(all_hn_cost, all_cq_cost, actual_cost)
+        baseline_lat = max(all_hn_lat, all_cq_lat, actual_lat)
+        cost_saving = round(max(0.0, baseline_cost - actual_cost), 4)
+        cost_saving_pct = round(100.0 * cost_saving / baseline_cost, 1) if baseline_cost > 0 else 0.0
+        lat_improve = round(max(0.0, baseline_lat - actual_lat), 2)
+        lat_improve_pct = round(100.0 * lat_improve / baseline_lat, 1) if baseline_lat > 0 else 0.0
+        success_rate = round(100.0 * len(ok) / max(1, count), 1)
+        cross = len(dist) >= 2
+        peak_max = round(max(peak.get("海南", 0), peak.get("重庆", 0)), 1)
+
+        bullets = [
+            f"完成 {len(ok)}/{count} 分片，成功率 {success_rate}%",
+            f"落点分布：" + ("、".join(f"{k} {v}" for k, v in dist.items()) if dist else "无成功分片"),
+            f"相对单边基线，估算成本节省 {cost_saving:.2f}（{cost_saving_pct}%），时延改善 {lat_improve:.1f} ms（{lat_improve_pct}%）",
+            f"观测峰值 GPU 利用率 海南 {peak.get('海南', 0):.1f}% / 重庆 {peak.get('重庆', 0):.1f}%",
+        ]
+        if cross:
+            bullets.append("实现海南↔重庆跨域协同，避免单点挤占")
+        if peak_max < 15 and any(c.get("workload") == "resnet" or parent.get("scenario", "").startswith("dt") for c in children):
+            bullets.append("说明：ResNet 分片约 1–2 秒结束，瞬时利用率易被 1s 采样漏采；峰值与占位类场景更能体现负载")
+
+        headline = (
+            f"{parent.get('scenario_code') or parent.get('scenario')} · {mode}："
+            f"成功率 {success_rate}% · 成本↓{cost_saving_pct}% · 峰值利用率 {peak_max}%"
+        )
+        return {
+            "parent_id": parent_id,
+            "scenario": parent.get("scenario"),
+            "scenario_code": parent.get("scenario_code"),
+            "mode": mode,
+            "status": parent.get("status"),
+            "finished_at": parent.get("finished_at") or now_iso(),
+            "headline": headline,
+            "success_shards": len(ok),
+            "failed_shards": len(fail),
+            "total_shards": count,
+            "success_rate_pct": success_rate,
+            "distribution": dist,
+            "actual_cost": actual_cost,
+            "baseline_cost": baseline_cost,
+            "cost_saving": cost_saving,
+            "cost_saving_pct": cost_saving_pct,
+            "actual_latency_ms": actual_lat,
+            "baseline_latency_ms": baseline_lat,
+            "latency_improve_ms": lat_improve,
+            "latency_improve_pct": lat_improve_pct,
+            "peak_util": {"海南": round(peak.get("海南", 0), 1), "重庆": round(peak.get("重庆", 0), 1)},
+            "cross_region": cross,
+            "bullets": bullets,
+            "bars": [
+                {"label": "实际成本", "value": actual_cost, "unit": "元", "color": "#36d399"},
+                {"label": "更贵单边", "value": baseline_cost, "unit": "元", "color": "#ffb454"},
+                {"label": "实际时延", "value": actual_lat, "unit": "ms", "color": "#55a6ff"},
+                {"label": "更慢单边", "value": baseline_lat, "unit": "ms", "color": "#94a3b8"},
+            ],
+            "counterfactual": {
+                "all_hainan_cost": all_hn_cost,
+                "all_chongqing_cost": all_cq_cost,
+                "all_hainan_latency_ms": all_hn_lat,
+                "all_chongqing_latency_ms": all_cq_lat,
+            },
+            "result_sha256": parent.get("result_sha256") or "",
+        }
 
     def _reserve_hainan(self, parent_id: str) -> None:
         node = self.nodes["海南"]
@@ -1322,6 +1522,9 @@ class SchedulerState:
                     "modes": ["动态权重多目标", "海南优先", "最小延迟", "最小成本", "静态本地", "先到先服务"],
                 },
                 "last_decision": self.last_decision,
+                "last_outcome": self.last_outcome,
+                "outcomes": list(self.outcomes[:8]),
+                "peak_util": dict(self._peak_util),
                 "paper_summary": None if not self.paper_cache else {
                     "summaries": self.paper_cache.get("summaries"),
                     "ablation": self.paper_cache.get("ablation"),

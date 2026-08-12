@@ -9,3 +9,6 @@ venv/
 **/*token*
 *.log
 .qa_*/
+.playwright-cli/
+**/.playwright-cli/
+.DS_Store
