@@ -141,7 +141,7 @@ def chart_radar(summaries: dict, out: Path) -> None:
             angles,
             vals,
             color=colors[i % len(colors)],
-            linewidth=2.4 if "本文" in name else 1.3,
+            linewidth=2.4 if name == METHOD else 1.3,
             label=short_name(name),
         )
     ax.set_xticks(angles[:-1])
@@ -285,7 +285,7 @@ def build_report(payload: dict) -> Path:
         doc,
         ["模块", "路径", "说明"],
         [
-            ["调度核心", "src/scheduler/paper_scheduler.py", "硬约束、规范化、自适应打分"],
+            ["调度核心", "src/scheduler/adaptive_scheduler.py", "硬约束、规范化、自适应打分"],
             ["实验与基线", "src/scheduler/experiment.py", "30 任务顺序提交、消融与失败分类"],
             ["单元测试", "tests/test_scheduler.py", "约束、打分公式、桥接与实验健康检查"],
             ["控制面", "src/controller/server.py", "API、策略选择、真实派发"],
@@ -398,7 +398,7 @@ def build_report(payload: dict) -> Path:
     add_para(
         doc,
         "控制面默认使用本算法为海南/重庆真实节点选点，并保留 16GB 显存等硬约束桥接逻辑。"
-        "现场 ResNet 分片推理、结果汇聚与安全负向用例的证据见"
+        "现场 ResNet 分片推理、短时占卡观测利用率、结果汇聚与安全负向用例见"
         "《跨境算力调度真实联调测试报告》。",
     )
 
@@ -440,11 +440,88 @@ def build_report(payload: dict) -> Path:
     return out
 
 
+def build_integration_report() -> Path:
+    """生成与当前线上系统一致的真实联调说明报告（不含凭据）。"""
+    doc = Document()
+    section = doc.sections[0]
+    section.top_margin = Cm(2.2)
+    section.bottom_margin = Cm(2.2)
+    section.left_margin = Cm(2.4)
+    section.right_margin = Cm(2.4)
+
+    add_para(doc, "跨境算力调度真实联调测试报告", size=18, bold=True, center=True, space_after=4)
+    add_para(
+        doc,
+        f"版本：最终版　日期：{datetime.now().strftime('%Y-%m-%d')}　织物：real（海南 / 重庆）",
+        size=10,
+        center=True,
+        space_after=16,
+    )
+    add_para(
+        doc,
+        "本报告描述新加坡控制面与两地真实 GPU agent 的联调现状。算法为自适应动态权重多目标调度；"
+        "控制台提供利用率峰值、收益对照与场景化测试。凭据与内网细节不写入本报告。",
+    )
+
+    add_heading(doc, "1. 联调拓扑", 1)
+    add_table(
+        doc,
+        ["角色", "位置", "职责"],
+        [
+            ["控制面 / UI", "新加坡 :8080", "场景提交、调度决策、状态汇聚、收益面板"],
+            ["Node Agent", "海南", "nvidia-smi 上报、ResNet / gpu_load 执行"],
+            ["Node Agent", "重庆", "同上，多卡并行"],
+        ],
+    )
+
+    add_heading(doc, "2. 调度与负载", 1)
+    add_para(
+        doc,
+        "默认策略「动态权重多目标」。DT01 等场景先跑 ResNet 分片（通常数秒），再按 duration_sec "
+        "短时 GEMM 占卡（最多约 15 秒）便于观察利用率；DEMO 场景使用持续 gpu_load≈25 秒。"
+        "控制面记录区域 / 单卡会话峰值利用率，任务结束后瞬时利用率归零属预期行为。",
+    )
+
+    add_heading(doc, "3. 主要验收点", 1)
+    add_table(
+        doc,
+        ["编号", "场景", "关注点"],
+        [
+            ["DT01", "两地分片批量推理", "跨区落点、结果汇聚、利用率峰值"],
+            ["DT02", "海南优先与分流", "显存占满后改派重庆"],
+            ["DT03", "16GB 显存", "排除重庆 12GB 卡"],
+            ["DEMO", "利用率与收益演示", "持续占卡、成本/时延收益摘要"],
+            ["TC02/03/04", "安全负向", "鉴权/端口/哈希拒绝且不落 GPU"],
+        ],
+    )
+
+    add_heading(doc, "4. 控制台能力", 1)
+    add_para(
+        doc,
+        "实时折线：可用显存 / GPU 利用率（含会话峰）/ 分片队列；资源卡片展示实时与峰值利用率、显存占用；"
+        "完成后「测试收益与效果」汇总相对单边基线的成本与时延收益。",
+    )
+
+    add_heading(doc, "5. 结论", 1)
+    add_para(
+        doc,
+        "真实联调路径已收敛为：新算法 + 经典控制台 + 两地真实 agent。"
+        "算法报告给出离线 30 任务对比；本报告对应现场可复现的调度与观测能力。",
+    )
+
+    out = REPORTS / "跨境算力调度真实联调测试报告.docx"
+    doc.save(out)
+    return out
+
+
 def main() -> None:
     DATA.mkdir(parents=True, exist_ok=True)
+    CHARTS.mkdir(parents=True, exist_ok=True)
     payload = run_paper_experiment(DATA)
-    path = build_report(payload)
-    print(path)
+    algo = build_report(payload)
+    integ = build_integration_report()
+    print(algo)
+    print(integ)
     issues = assert_experiment_health(payload)
     print("health:", "OK" if not issues else issues)
 

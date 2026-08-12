@@ -7,7 +7,7 @@ import time
 from typing import Any, Callable
 
 from .model import NodeState, TaskSpec
-from .paper_scheduler import (
+from .adaptive_scheduler import (
     CandidateMetrics,
     LeaseManager,
     PaperScheduler,

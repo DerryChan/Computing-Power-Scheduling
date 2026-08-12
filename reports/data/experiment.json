@@ -438,7 +438,7 @@
       "avg_energy": 6.9674,
       "gpu_util_pct": 62.5,
       "avg_green_pct": 65.71,
-      "avg_compute_ms": 0.018,
+      "avg_compute_ms": 0.0522,
       "distribution": {
         "重庆": 5,
         "新疆": 3,
@@ -473,7 +473,7 @@
       "avg_energy": 7.2589,
       "gpu_util_pct": 100.0,
       "avg_green_pct": 64.77,
-      "avg_compute_ms": 0.0129,
+      "avg_compute_ms": 0.0136,
       "distribution": {
         "重庆": 6,
         "新疆": 3,
@@ -502,7 +502,7 @@
       "avg_energy": 6.872,
       "gpu_util_pct": 95.0,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0136,
+      "avg_compute_ms": 0.0133,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -531,7 +531,7 @@
       "avg_energy": 7.4163,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.24,
-      "avg_compute_ms": 0.0148,
+      "avg_compute_ms": 0.0157,
       "distribution": {
         "重庆": 5,
         "新疆": 3,
@@ -561,7 +561,7 @@
       "avg_energy": 7.0039,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 64.77,
-      "avg_compute_ms": 11.8762,
+      "avg_compute_ms": 12.2547,
       "distribution": {
         "新疆": 3,
         "海南": 3,
@@ -590,7 +590,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0225,
+      "avg_compute_ms": 0.0175,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -621,7 +621,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0171,
+      "avg_compute_ms": 0.0191,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -650,7 +650,7 @@
       "avg_energy": 7.1566,
       "gpu_util_pct": 95.0,
       "avg_green_pct": 65.0,
-      "avg_compute_ms": 0.0154,
+      "avg_compute_ms": 0.0225,
       "distribution": {
         "新疆": 3,
         "海南": 3,
@@ -680,7 +680,7 @@
       "avg_energy": 7.0657,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0151,
+      "avg_compute_ms": 0.0154,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -738,7 +738,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0152,
+      "avg_compute_ms": 0.0151,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -842,7 +842,7 @@
       "cost": 27.0,
       "energy": 6.72,
       "green_ratio": 0.7,
-      "compute_ms": 0.03766699228435755,
+      "compute_ms": 0.034833967220038176,
       "reason": "动态权重多目标最优：Score=0.0748 (S(t)=1.887, lat=48.0ms, cost=27.00, energy=6.720, load=0.00)",
       "scores": {
         "海南": 0.074825,
@@ -863,7 +863,7 @@
       "cost": 11.25,
       "energy": 1.26,
       "green_ratio": 0.85,
-      "compute_ms": 0.021208019461482763,
+      "compute_ms": 0.020957959350198507,
       "reason": "动态权重多目标最优：Score=0.0000 (S(t)=0.951, lat=87.7ms, cost=11.25, energy=1.260, load=0.00)",
       "scores": {
         "新疆": 0.0,
@@ -891,7 +891,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.014291959814727306,
+      "compute_ms": 0.010207993909716606,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -927,7 +927,7 @@
       "cost": 25.0,
       "energy": 6.384,
       "green_ratio": 0.7,
-      "compute_ms": 0.025874993298202753,
+      "compute_ms": 0.023457978386431932,
       "reason": "动态权重多目标最优：Score=0.1088 (S(t)=1.728, lat=46.2ms, cost=25.00, energy=6.384, load=0.33)",
       "scores": {
         "海南": 0.108788,
@@ -948,7 +948,7 @@
       "cost": 15.9,
       "energy": 1.512,
       "green_ratio": 0.85,
-      "compute_ms": 0.017291982658207417,
+      "compute_ms": 0.017916958313435316,
       "reason": "动态权重多目标最优：Score=0.0250 (S(t)=0.826, lat=94.5ms, cost=15.90, energy=1.512, load=0.25)",
       "scores": {
         "新疆": 0.025
@@ -982,7 +982,7 @@
       "cost": 32.0,
       "energy": 8.512,
       "green_ratio": 0.6,
-      "compute_ms": 0.013375014532357454,
+      "compute_ms": 0.012708012945950031,
       "reason": "动态权重多目标最优：Score=0.1000 (S(t)=1.467, lat=45.7ms, cost=32.00, energy=8.512, load=0.00)",
       "scores": {
         "香港": 0.1,
@@ -1013,7 +1013,7 @@
       "cost": 34.2,
       "energy": 15.552,
       "green_ratio": 0.55,
-      "compute_ms": 0.017915968783199787,
+      "compute_ms": 0.017874990589916706,
       "reason": "动态权重多目标最优：Score=0.0471 (S(t)=2.062, lat=58.2ms, cost=34.20, energy=15.552, load=0.00)",
       "scores": {
         "重庆": 0.047073,
@@ -1041,7 +1041,7 @@
       "cost": 11.5,
       "energy": 2.52,
       "green_ratio": 0.7,
-      "compute_ms": 0.025374989490956068,
+      "compute_ms": 0.023833999875932932,
       "reason": "动态权重多目标最优：Score=0.1391 (S(t)=0.654, lat=38.0ms, cost=11.50, energy=2.520, load=0.67)",
       "scores": {
         "海南": 0.139053,
@@ -1062,7 +1062,7 @@
       "cost": 24.0,
       "energy": 2.88,
       "green_ratio": 0.85,
-      "compute_ms": 0.01491600414738059,
+      "compute_ms": 0.013624958228319883,
       "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.282, lat=99.3ms, cost=24.00, energy=2.880, load=0.50)",
       "scores": {
         "新疆": 0.05
@@ -1096,7 +1096,7 @@
       "cost": 15.7,
       "energy": 3.584,
       "green_ratio": 0.65,
-      "compute_ms": 0.02116599353030324,
+      "compute_ms": 0.019875005818903446,
       "reason": "动态权重多目标最优：Score=0.0745 (S(t)=1.825, lat=33.4ms, cost=15.70, energy=3.584, load=0.00)",
       "scores": {
         "新加坡": 0.074468,
@@ -1121,7 +1121,7 @@
       "cost": 21.6,
       "energy": 9.216,
       "green_ratio": 0.55,
-      "compute_ms": 0.016790989320725203,
+      "compute_ms": 0.027166970539838076,
       "reason": "动态权重多目标最优：Score=0.1425 (S(t)=1.649, lat=51.6ms, cost=21.60, energy=9.216, load=0.30)",
       "scores": {
         "重庆": 0.14254,
@@ -1149,7 +1149,7 @@
       "cost": 30.7,
       "energy": 8.064,
       "green_ratio": 0.65,
-      "compute_ms": 0.015208031982183456,
+      "compute_ms": 0.012208009138703346,
       "reason": "动态权重多目标最优：Score=0.0083 (S(t)=1.278, lat=38.8ms, cost=30.70, energy=8.064, load=0.08)",
       "scores": {
         "新加坡": 0.008333,
@@ -1180,7 +1180,7 @@
       "cost": 37.6,
       "energy": 16.5888,
       "green_ratio": 0.55,
-      "compute_ms": 0.014290970284491777,
+      "compute_ms": 0.012375006917864084,
       "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.697, lat=61.0ms, cost=37.60, energy=16.589, load=0.50)",
       "scores": {
         "重庆": 0.05
@@ -1214,7 +1214,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.00891595846042037,
+      "compute_ms": 0.008165952749550343,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1250,7 +1250,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.024457986000925303,
+      "compute_ms": 0.006249989382922649,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1286,7 +1286,7 @@
       "cost": 28.8,
       "energy": 7.616,
       "green_ratio": 0.65,
-      "compute_ms": 0.01795799471437931,
+      "compute_ms": 0.01637497916817665,
       "reason": "动态权重多目标最优：Score=0.0250 (S(t)=1.651, lat=37.6ms, cost=28.80, energy=7.616, load=0.25)",
       "scores": {
         "新加坡": 0.025,
@@ -1314,7 +1314,7 @@
       "cost": 14.0,
       "energy": 2.688,
       "green_ratio": 0.7,
-      "compute_ms": 0.018708000425249338,
+      "compute_ms": 0.017000013031065464,
       "reason": "动态权重多目标最优：Score=0.1075 (S(t)=0.763, lat=40.8ms, cost=14.00, energy=2.688, load=0.83)",
       "scores": {
         "海南": 0.107471,
@@ -1342,7 +1342,7 @@
       "cost": 36.5,
       "energy": 8.9984,
       "green_ratio": 0.6,
-      "compute_ms": 0.023917004000395536,
+      "compute_ms": 0.011958007235080004,
       "reason": "动态权重多目标最优：Score=0.1250 (S(t)=1.375, lat=48.5ms, cost=36.50, energy=8.998, load=0.25)",
       "scores": {
         "香港": 0.125,
@@ -1373,7 +1373,7 @@
       "cost": 58.3,
       "energy": 15.456,
       "green_ratio": 0.65,
-      "compute_ms": 0.0191659783013165,
+      "compute_ms": 0.015208963304758072,
       "reason": "动态权重多目标最优：Score=0.0417 (S(t)=1.837, lat=49.4ms, cost=58.30, energy=15.456, load=0.42)",
       "scores": {
         "新加坡": 0.041667,
@@ -1404,7 +1404,7 @@
       "cost": 26.0,
       "energy": 3.456,
       "green_ratio": 0.55,
-      "compute_ms": 0.014666991773992777,
+      "compute_ms": 0.012249976862221956,
       "reason": "动态权重多目标最优：Score=0.0800 (S(t)=0.937, lat=125.7ms, cost=26.00, energy=3.456, load=0.80)",
       "scores": {
         "重庆": 0.08
@@ -1438,7 +1438,7 @@
       "cost": 42.8,
       "energy": 10.2144,
       "green_ratio": 0.6,
-      "compute_ms": 0.09204103844240308,
+      "compute_ms": 0.012375006917864084,
       "reason": "动态权重多目标最优：Score=0.1500 (S(t)=1.662, lat=52.5ms, cost=42.80, energy=10.214, load=0.50)",
       "scores": {
         "香港": 0.15,
@@ -1469,7 +1469,7 @@
       "cost": 13.3,
       "energy": 3.136,
       "green_ratio": 0.65,
-      "compute_ms": 0.02258300082758069,
+      "compute_ms": 0.015458033885806799,
       "reason": "动态权重多目标最优：Score=0.0667 (S(t)=1.927, lat=31.0ms, cost=13.30, energy=3.136, load=0.67)",
       "scores": {
         "新加坡": 0.066667,
@@ -1497,7 +1497,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.0070829992182552814,
+      "compute_ms": 0.005375011824071407,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1533,7 +1533,7 @@
       "cost": 30.0,
       "energy": 7.84,
       "green_ratio": 0.65,
-      "compute_ms": 0.015249999705702066,
+      "compute_ms": 0.0118750031106174,
       "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.188, lat=38.4ms, cost=30.00, energy=7.840, load=0.75)",
       "scores": {
         "新加坡": 0.075,
@@ -1564,7 +1564,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.003334018401801586,
+      "compute_ms": 0.002374988980591297,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1600,7 +1600,7 @@
       "cost": 12.2,
       "energy": 4.032,
       "green_ratio": 0.55,
-      "compute_ms": 0.019499973859637976,
+      "compute_ms": 0.02566596958786249,
       "reason": "动态权重多目标最优：Score=0.1702 (S(t)=0.779, lat=46.2ms, cost=12.20, energy=4.032, load=0.90)",
       "scores": {
         "重庆": 0.170217,
@@ -1628,7 +1628,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.0024999608285725117,
+      "compute_ms": 0.002500019036233425,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1664,7 +1664,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.006208021659404039,
+      "compute_ms": 0.005542009603232145,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1700,7 +1700,7 @@
       "cost": 36.0,
       "energy": 9.2416,
       "green_ratio": 0.6,
-      "compute_ms": 0.010417017620056868,
+      "compute_ms": 0.009624985978007317,
       "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.767, lat=48.2ms, cost=36.00, energy=9.242, load=0.75)",
       "scores": {
         "香港": 0.075
@@ -1734,7 +1734,7 @@
       "cost": null,
       "energy": null,
       "green_ratio": null,
-      "compute_ms": 0.0026249908842146397,
+      "compute_ms": 0.002500019036233425,
       "reason": "无满足硬约束的候选节点",
       "scores": {},
       "rejected": [
@@ -1772,7 +1772,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.04295801045373082,
+        "compute_ms": 0.14108297182247043,
         "reason": "静态本地路由固定映射至 重庆",
         "scores": {
           "重庆": 0.0
@@ -1788,7 +1788,7 @@
         "cost": 11.25,
         "energy": 1.26,
         "green_ratio": 0.85,
-        "compute_ms": 0.021875021047890186,
+        "compute_ms": 0.1401670160703361,
         "reason": "静态本地路由固定映射至 新疆",
         "scores": {
           "新疆": 0.0
@@ -1804,7 +1804,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.00920804450288415,
+        "compute_ms": 0.01225003506988287,
         "reason": "静态本地节点 新加坡 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -1818,7 +1818,7 @@
         "cost": 20.0,
         "energy": 8.7552,
         "green_ratio": 0.55,
-        "compute_ms": 0.026999972760677338,
+        "compute_ms": 0.024540990125387907,
         "reason": "静态本地路由固定映射至 重庆",
         "scores": {
           "重庆": 0.0
@@ -1834,7 +1834,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 0.013291952200233936,
+        "compute_ms": 0.04191702464595437,
         "reason": "静态本地路由固定映射至 新疆",
         "scores": {
           "新疆": 0.0
@@ -1850,7 +1850,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.008750008419156075,
+        "compute_ms": 0.04170899046584964,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -1864,7 +1864,7 @@
         "cost": 34.2,
         "energy": 15.552,
         "green_ratio": 0.55,
-        "compute_ms": 0.01733400858938694,
+        "compute_ms": 0.09312503971159458,
         "reason": "静态本地路由固定映射至 重庆",
         "scores": {
           "重庆": 0.0
@@ -1880,7 +1880,7 @@
         "cost": 9.2,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 0.02008303999900818,
+        "compute_ms": 0.08854200132191181,
         "reason": "静态本地路由固定映射至 重庆",
         "scores": {
           "重庆": 0.0
@@ -1896,7 +1896,7 @@
         "cost": 24.0,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 0.012792006600648165,
+        "compute_ms": 0.09545800276100636,
         "reason": "静态本地路由固定映射至 新疆",
         "scores": {
           "新疆": 0.0
@@ -1912,7 +1912,7 @@
         "cost": 15.7,
         "energy": 3.584,
         "green_ratio": 0.65,
-        "compute_ms": 0.017332960851490498,
+        "compute_ms": 0.02254103310406208,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -1928,7 +1928,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.016790989320725203,
+        "compute_ms": 0.019000028260052204,
         "reason": "静态本地路由固定映射至 重庆",
         "scores": {
           "重庆": 0.0
@@ -1944,7 +1944,7 @@
         "cost": 30.7,
         "energy": 8.064,
         "green_ratio": 0.65,
-        "compute_ms": 0.009874987881630659,
+        "compute_ms": 0.010624993592500687,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -1960,7 +1960,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.007957976777106524,
+        "compute_ms": 0.012208998668938875,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -1974,7 +1974,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006791960913687944,
+        "compute_ms": 0.007333001121878624,
         "reason": "静态本地节点 新疆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -1988,7 +1988,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.004791945684701204,
+        "compute_ms": 0.004916975740343332,
         "reason": "静态本地节点 新疆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2002,7 +2002,7 @@
         "cost": 28.8,
         "energy": 7.616,
         "green_ratio": 0.65,
-        "compute_ms": 0.013792014215141535,
+        "compute_ms": 0.015166995581239462,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2018,7 +2018,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.008542032446712255,
+        "compute_ms": 0.009374984074383974,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2032,7 +2032,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006541959010064602,
+        "compute_ms": 0.0069579691626131535,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2046,7 +2046,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 0.015166006051003933,
+        "compute_ms": 0.01433398574590683,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2062,7 +2062,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0067909713834524155,
+        "compute_ms": 0.0070410314947366714,
         "reason": "静态本地节点 新疆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2076,7 +2076,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.009416951797902584,
+        "compute_ms": 0.011500029359012842,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2090,7 +2090,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 0.013707962352782488,
+        "compute_ms": 0.014290970284491777,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2106,7 +2106,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006542017217725515,
+        "compute_ms": 0.006665999535471201,
         "reason": "静态本地节点 新疆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2120,7 +2120,7 @@
         "cost": 30.0,
         "energy": 7.84,
         "green_ratio": 0.65,
-        "compute_ms": 0.009624985978007317,
+        "compute_ms": 0.010457995813339949,
         "reason": "静态本地路由固定映射至 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2136,7 +2136,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006209011189639568,
+        "compute_ms": 0.005999987479299307,
         "reason": "静态本地节点 新加坡 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2150,7 +2150,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.011541997082531452,
+        "compute_ms": 0.01029198756441474,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2164,7 +2164,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.007166992872953415,
+        "compute_ms": 0.007499998901039362,
         "reason": "静态本地节点 新加坡 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2178,7 +2178,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006707967258989811,
+        "compute_ms": 0.006874965038150549,
         "reason": "静态本地节点 新疆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2192,7 +2192,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0072919647209346294,
+        "compute_ms": 0.007499998901039362,
         "reason": "静态本地节点 重庆 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2206,7 +2206,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0070829992182552814,
+        "compute_ms": 0.007415947038680315,
         "reason": "静态本地节点 新加坡 不满足硬约束",
         "scores": {},
         "s_t": 1.0,
@@ -2222,7 +2222,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.023374974261969328,
+        "compute_ms": 0.027125002816319466,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2238,7 +2238,7 @@
         "cost": 27.0,
         "energy": 4.032,
         "green_ratio": 0.55,
-        "compute_ms": 0.016833015251904726,
+        "compute_ms": 0.01879199407994747,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2254,7 +2254,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.009583018254488707,
+        "compute_ms": 0.010000017937272787,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2268,7 +2268,7 @@
         "cost": 20.0,
         "energy": 8.7552,
         "green_ratio": 0.55,
-        "compute_ms": 0.020457955542951822,
+        "compute_ms": 0.02204196061939001,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2284,7 +2284,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 0.013000040780752897,
+        "compute_ms": 0.013999990187585354,
         "reason": "先到先服务：按节点顺序选中 新疆",
         "scores": {
           "新疆": 0.0
@@ -2300,7 +2300,7 @@
         "cost": 32.0,
         "energy": 8.512,
         "green_ratio": 0.6,
-        "compute_ms": 0.01029198756441474,
+        "compute_ms": 0.01087499549612403,
         "reason": "先到先服务：按节点顺序选中 香港",
         "scores": {
           "香港": 0.0
@@ -2316,7 +2316,7 @@
         "cost": 34.2,
         "energy": 15.552,
         "green_ratio": 0.55,
-        "compute_ms": 0.020749983377754688,
+        "compute_ms": 0.022082997020334005,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2332,7 +2332,7 @@
         "cost": 9.2,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 0.021499989088624716,
+        "compute_ms": 0.021666986867785454,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2348,7 +2348,7 @@
         "cost": 24.0,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 0.011791998986154795,
+        "compute_ms": 0.01229200279340148,
         "reason": "先到先服务：按节点顺序选中 新疆",
         "scores": {
           "新疆": 0.0
@@ -2364,7 +2364,7 @@
         "cost": 22.15,
         "energy": 3.6864,
         "green_ratio": 0.55,
-        "compute_ms": 0.018666964024305344,
+        "compute_ms": 0.01979200169444084,
         "reason": "先到先服务：按节点顺序选中 重庆",
         "scores": {
           "重庆": 0.0
@@ -2380,7 +2380,7 @@
         "cost": 27.0,
         "energy": 6.72,
         "green_ratio": 0.7,
-        "compute_ms": 0.014417048078030348,
+        "compute_ms": 0.014708028174936771,
         "reason": "先到先服务：按节点顺序选中 海南",
         "scores": {
           "海南": 0.0
@@ -2396,7 +2396,7 @@
         "cost": 32.6,
         "energy": 8.7552,
         "green_ratio": 0.6,
-        "compute_ms": 0.010207993909716606,
+        "compute_ms": 0.010834017302840948,
         "reason": "先到先服务：按节点顺序选中 香港",
         "scores": {
           "香港": 0.0
@@ -2412,7 +2412,7 @@
         "cost": 47.0,
         "energy": 12.096,
         "green_ratio": 0.7,
-        "compute_ms": 0.010374991688877344,
+        "compute_ms": 0.010917021427303553,
         "reason": "先到先服务：按节点顺序选中 海南",
         "scores": {
           "海南": 0.0
@@ -2428,7 +2428,7 @@
         "cost": 16.5,
         "energy": 1.368,
         "green_ratio": 0.85,
-        "compute_ms": 0.011832977179437876,
+        "compute_ms": 0.013708020560443401,
         "reason": "先到先服务：按节点顺序选中 新疆",
         "scores": {
           "新疆": 0.0
@@ -2444,7 +2444,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006125017534941435,
+        "compute_ms": 0.004917033948004246,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2458,7 +2458,7 @@
         "cost": 30.4,
         "energy": 8.2688,
         "green_ratio": 0.6,
-        "compute_ms": 0.011082971468567848,
+        "compute_ms": 0.011541997082531452,
         "reason": "先到先服务：按节点顺序选中 香港",
         "scores": {
           "香港": 0.0
@@ -2474,7 +2474,7 @@
         "cost": 14.0,
         "energy": 2.688,
         "green_ratio": 0.7,
-        "compute_ms": 0.01291598891839385,
+        "compute_ms": 0.012874952517449856,
         "reason": "先到先服务：按节点顺序选中 海南",
         "scores": {
           "海南": 0.0
@@ -2490,7 +2490,7 @@
         "cost": 36.5,
         "energy": 8.9984,
         "green_ratio": 0.6,
-        "compute_ms": 0.010540999937802553,
+        "compute_ms": 0.010334013495594263,
         "reason": "先到先服务：按节点顺序选中 香港",
         "scores": {
           "香港": 0.0
@@ -2506,7 +2506,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 0.00762502895668149,
+        "compute_ms": 0.008000002708286047,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2522,7 +2522,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.004208006430417299,
+        "compute_ms": 0.003958004526793957,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2536,7 +2536,7 @@
         "cost": 55.0,
         "energy": 9.408,
         "green_ratio": 0.65,
-        "compute_ms": 0.007707974873483181,
+        "compute_ms": 0.007791037205606699,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2552,7 +2552,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 0.007959024515002966,
+        "compute_ms": 0.007542024832218885,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2568,7 +2568,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.005708017852157354,
+        "compute_ms": 0.00404199818149209,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2582,7 +2582,7 @@
         "cost": 30.0,
         "energy": 7.84,
         "green_ratio": 0.65,
-        "compute_ms": 0.007375027053058147,
+        "compute_ms": 0.006999995093792677,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2598,7 +2598,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.004375004209578037,
+        "compute_ms": 0.004165980499237776,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2612,7 +2612,7 @@
         "cost": 33.05,
         "energy": 3.92,
         "green_ratio": 0.65,
-        "compute_ms": 0.007833004929125309,
+        "compute_ms": 0.007459020707756281,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2628,7 +2628,7 @@
         "cost": 50.0,
         "energy": 13.44,
         "green_ratio": 0.65,
-        "compute_ms": 0.00762502895668149,
+        "compute_ms": 0.007375027053058147,
         "reason": "先到先服务：按节点顺序选中 新加坡",
         "scores": {
           "新加坡": 0.0
@@ -2644,7 +2644,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0025840126909315586,
+        "compute_ms": 0.002334010787308216,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2658,7 +2658,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.002541986759752035,
+        "compute_ms": 0.002415967173874378,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2672,7 +2672,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.002459040842950344,
+        "compute_ms": 0.0022919848561286926,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2688,7 +2688,7 @@
         "cost": 27.0,
         "energy": 6.72,
         "green_ratio": 0.7,
-        "compute_ms": 0.024834007490426302,
+        "compute_ms": 0.0231250305660069,
         "reason": "最小延迟策略",
         "scores": {
           "海南": 0.0
@@ -2704,7 +2704,7 @@
         "cost": 11.25,
         "energy": 1.26,
         "green_ratio": 0.85,
-        "compute_ms": 0.01775001874193549,
+        "compute_ms": 0.017207989003509283,
         "reason": "最小延迟策略",
         "scores": {
           "新疆": 0.0
@@ -2720,7 +2720,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.008833012543618679,
+        "compute_ms": 0.008415954653173685,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2734,7 +2734,7 @@
         "cost": 25.0,
         "energy": 6.384,
         "green_ratio": 0.7,
-        "compute_ms": 0.021666986867785454,
+        "compute_ms": 0.021082989405840635,
         "reason": "最小延迟策略",
         "scores": {
           "海南": 0.0
@@ -2750,7 +2750,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 0.013665994629263878,
+        "compute_ms": 0.012958014849573374,
         "reason": "最小延迟策略",
         "scores": {
           "新疆": 0.0
@@ -2766,7 +2766,7 @@
         "cost": 32.0,
         "energy": 8.512,
         "green_ratio": 0.6,
-        "compute_ms": 0.0149579718708992,
+        "compute_ms": 0.010374991688877344,
         "reason": "最小延迟策略",
         "scores": {
           "香港": 0.0
@@ -2782,7 +2782,7 @@
         "cost": 60.3,
         "energy": 16.416,
         "green_ratio": 0.6,
-        "compute_ms": 0.014833000022917986,
+        "compute_ms": 0.014416989870369434,
         "reason": "最小延迟策略",
         "scores": {
           "香港": 0.0
@@ -2798,7 +2798,7 @@
         "cost": 11.5,
         "energy": 2.52,
         "green_ratio": 0.7,
-        "compute_ms": 0.021625019144266844,
+        "compute_ms": 0.020749983377754688,
         "reason": "最小延迟策略",
         "scores": {
           "海南": 0.0
@@ -2814,7 +2814,7 @@
         "cost": 24.0,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 0.011749973054975271,
+        "compute_ms": 0.011458003427833319,
         "reason": "最小延迟策略",
         "scores": {
           "新疆": 0.0
@@ -2830,7 +2830,7 @@
         "cost": 15.7,
         "energy": 3.584,
         "green_ratio": 0.65,
-        "compute_ms": 0.018167018424719572,
+        "compute_ms": 0.017583020962774754,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -2846,7 +2846,7 @@
         "cost": 39.4,
         "energy": 9.728,
         "green_ratio": 0.6,
-        "compute_ms": 0.014541030395776033,
+        "compute_ms": 0.013999990187585354,
         "reason": "最小延迟策略",
         "scores": {
           "香港": 0.0
@@ -2862,7 +2862,7 @@
         "cost": 30.7,
         "energy": 8.064,
         "green_ratio": 0.65,
-        "compute_ms": 0.007041962817311287,
+        "compute_ms": 0.00662502134218812,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -2878,7 +2878,7 @@
         "cost": 37.6,
         "energy": 16.5888,
         "green_ratio": 0.55,
-        "compute_ms": 0.009125040378421545,
+        "compute_ms": 0.00870897201821208,
         "reason": "最小延迟策略",
         "scores": {
           "重庆": 0.0
@@ -2894,7 +2894,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.008333998266607523,
+        "compute_ms": 0.008041970431804657,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2908,7 +2908,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0035410048440098763,
+        "compute_ms": 0.004875008016824722,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -2922,7 +2922,7 @@
         "cost": 28.8,
         "energy": 7.616,
         "green_ratio": 0.65,
-        "compute_ms": 0.011249969247728586,
+        "compute_ms": 0.011124997399747372,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -2938,7 +2938,7 @@
         "cost": 14.0,
         "energy": 2.688,
         "green_ratio": 0.7,
-        "compute_ms": 0.015874975360929966,
+        "compute_ms": 0.01575000351294875,
         "reason": "最小延迟策略",
         "scores": {
           "海南": 0.0
@@ -2954,7 +2954,7 @@
         "cost": 46.7,
         "energy": 8.288,
         "green_ratio": 0.65,
-        "compute_ms": 0.0070829992182552814,
+        "compute_ms": 0.006791960913687944,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -2970,7 +2970,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 0.009125040378421545,
+        "compute_ms": 0.00870897201821208,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -2986,7 +2986,7 @@
         "cost": 26.0,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 0.010750023648142815,
+        "compute_ms": 0.01033395528793335,
         "reason": "最小延迟策略",
         "scores": {
           "重庆": 0.0
@@ -3002,7 +3002,7 @@
         "cost": 23.2,
         "energy": 9.6768,
         "green_ratio": 0.55,
-        "compute_ms": 0.011166033800691366,
+        "compute_ms": 0.010666029993444681,
         "reason": "最小延迟策略",
         "scores": {
           "重庆": 0.0
@@ -3018,7 +3018,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 0.014624965842813253,
+        "compute_ms": 0.014749995898455381,
         "reason": "最小延迟策略",
         "scores": {
           "新加坡": 0.0
@@ -3034,7 +3034,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.003999972250312567,
+        "compute_ms": 0.003958994057029486,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3048,7 +3048,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.00200001522898674,
+        "compute_ms": 0.0019579892978072166,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3062,7 +3062,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0038750004023313522,
+        "compute_ms": 0.004041008651256561,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3076,7 +3076,7 @@
         "cost": 24.8,
         "energy": 4.256,
         "green_ratio": 0.6,
-        "compute_ms": 0.014124962035566568,
+        "compute_ms": 0.01637497916817665,
         "reason": "最小延迟策略",
         "scores": {
           "香港": 0.0
@@ -3092,7 +3092,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.003917026333510876,
+        "compute_ms": 0.003958994057029486,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3106,7 +3106,7 @@
         "cost": 26.4,
         "energy": 3.6864,
         "green_ratio": 0.55,
-        "compute_ms": 0.008834002073854208,
+        "compute_ms": 0.011749973054975271,
         "reason": "最小延迟策略",
         "scores": {
           "重庆": 0.0
@@ -3122,7 +3122,7 @@
         "cost": 20.0,
         "energy": 8.7552,
         "green_ratio": 0.55,
-        "compute_ms": 0.007292022928595543,
+        "compute_ms": 0.007416994776576757,
         "reason": "最小延迟策略",
         "scores": {
           "重庆": 0.0
@@ -3138,7 +3138,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0034580007195472717,
+        "compute_ms": 0.0024999608285725117,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3154,7 +3154,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.0219999928958714,
+        "compute_ms": 0.02420798409730196,
         "reason": "最小成本策略",
         "scores": {
           "重庆": 0.0
@@ -3170,7 +3170,7 @@
         "cost": 11.25,
         "energy": 1.26,
         "green_ratio": 0.85,
-        "compute_ms": 0.017000013031065464,
+        "compute_ms": 0.01795799471437931,
         "reason": "最小成本策略",
         "scores": {
           "新疆": 0.0
@@ -3186,7 +3186,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.00825000461190939,
+        "compute_ms": 0.008834002073854208,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3200,7 +3200,7 @@
         "cost": 20.0,
         "energy": 8.7552,
         "green_ratio": 0.55,
-        "compute_ms": 0.020709005184471607,
+        "compute_ms": 0.022332998923957348,
         "reason": "最小成本策略",
         "scores": {
           "重庆": 0.0
@@ -3216,7 +3216,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 0.013000040780752897,
+        "compute_ms": 0.015416997484862804,
         "reason": "最小成本策略",
         "scores": {
           "新疆": 0.0
@@ -3232,7 +3232,7 @@
         "cost": 32.0,
         "energy": 8.512,
         "green_ratio": 0.6,
-        "compute_ms": 0.010208983439952135,
+        "compute_ms": 0.010624993592500687,
         "reason": "最小成本策略",
         "scores": {
           "香港": 0.0
@@ -3248,7 +3248,7 @@
         "cost": 34.2,
         "energy": 15.552,
         "green_ratio": 0.55,
-        "compute_ms": 0.01750001683831215,
+        "compute_ms": 0.01895800232887268,
         "reason": "最小成本策略",
         "scores": {
           "重庆": 0.0
@@ -3264,7 +3264,7 @@
         "cost": 9.2,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 0.02174999099224806,
+        "compute_ms": 0.022916996385902166,
         "reason": "最小成本策略",
         "scores": {
           "重庆": 0.0
@@ -3280,7 +3280,7 @@
         "cost": 24.0,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 0.014041026588529348,
+        "compute_ms": 0.013125012628734112,
         "reason": "最小成本策略",
         "scores": {
           "新疆": 0.0
@@ -3296,7 +3296,7 @@
         "cost": 15.7,
         "energy": 3.584,
         "green_ratio": 0.65,
-        "compute_ms": 0.03270799061283469,
+        "compute_ms": 0.03550003748387098,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3312,7 +3312,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.017250014934688807,
+        "compute_ms": 0.019791012164205313,
         "reason": "最小成本策略",
         "scores": {
           "重庆": 0.0
@@ -3328,7 +3328,7 @@
         "cost": 30.7,
         "energy": 8.064,
         "green_ratio": 0.65,
-        "compute_ms": 0.010249961633235216,
+        "compute_ms": 0.01066701952368021,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3344,7 +3344,7 @@
         "cost": 47.0,
         "energy": 12.096,
         "green_ratio": 0.7,
-        "compute_ms": 0.010083022061735392,
+        "compute_ms": 0.011000025551766157,
         "reason": "最小成本策略",
         "scores": {
           "海南": 0.0
@@ -3360,7 +3360,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006499991286545992,
+        "compute_ms": 0.006875023245811462,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3374,7 +3374,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.004583969712257385,
+        "compute_ms": 0.004749977961182594,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3388,7 +3388,7 @@
         "cost": 28.8,
         "energy": 7.616,
         "green_ratio": 0.65,
-        "compute_ms": 0.015624973457306623,
+        "compute_ms": 0.015083991456776857,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3404,7 +3404,7 @@
         "cost": 14.0,
         "energy": 2.688,
         "green_ratio": 0.7,
-        "compute_ms": 0.012125005014240742,
+        "compute_ms": 0.012499978765845299,
         "reason": "最小成本策略",
         "scores": {
           "海南": 0.0
@@ -3420,7 +3420,7 @@
         "cost": 36.5,
         "energy": 8.9984,
         "green_ratio": 0.6,
-        "compute_ms": 0.010000017937272787,
+        "compute_ms": 0.01066701952368021,
         "reason": "最小成本策略",
         "scores": {
           "香港": 0.0
@@ -3436,7 +3436,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 0.010624993592500687,
+        "compute_ms": 0.011249969247728586,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3452,7 +3452,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.00666698906570673,
+        "compute_ms": 0.006958027370274067,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3466,7 +3466,7 @@
         "cost": 29.0,
         "energy": 7.056,
         "green_ratio": 0.7,
-        "compute_ms": 0.01391698606312275,
+        "compute_ms": 0.015125027857720852,
         "reason": "最小成本策略",
         "scores": {
           "海南": 0.0
@@ -3482,7 +3482,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 0.010540999937802553,
+        "compute_ms": 0.013125012628734112,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3498,7 +3498,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.005375011824071407,
+        "compute_ms": 0.005417037755250931,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3512,7 +3512,7 @@
         "cost": 30.0,
         "energy": 7.84,
         "green_ratio": 0.65,
-        "compute_ms": 0.012125005014240742,
+        "compute_ms": 0.010624993592500687,
         "reason": "最小成本策略",
         "scores": {
           "新加坡": 0.0
@@ -3528,7 +3528,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.004125002305954695,
+        "compute_ms": 0.004208006430417299,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3542,7 +3542,7 @@
         "cost": 24.8,
         "energy": 4.256,
         "green_ratio": 0.6,
-        "compute_ms": 0.010917021427303553,
+        "compute_ms": 0.011499971151351929,
         "reason": "最小成本策略",
         "scores": {
           "香港": 0.0
@@ -3558,7 +3558,7 @@
         "cost": 52.0,
         "energy": 14.592,
         "green_ratio": 0.6,
-        "compute_ms": 0.0077080330811440945,
+        "compute_ms": 0.007458031177520752,
         "reason": "最小成本策略",
         "scores": {
           "香港": 0.0
@@ -3574,7 +3574,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.003917026333510876,
+        "compute_ms": 0.06262504030019045,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3588,7 +3588,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.002416956704109907,
+        "compute_ms": 0.005125009920448065,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3602,7 +3602,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.002415967173874378,
+        "compute_ms": 0.0024579931050539017,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3618,7 +3618,7 @@
         "cost": 22.5,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 11.6991670220159,
+        "compute_ms": 12.473875016439706,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新疆": 0.0
@@ -3634,7 +3634,7 @@
         "cost": 11.25,
         "energy": 1.26,
         "green_ratio": 0.85,
-        "compute_ms": 11.997207999229431,
+        "compute_ms": 12.651541968807578,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新疆": 0.0
@@ -3650,7 +3650,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.022332998923957348,
+        "compute_ms": 0.026708003133535385,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3664,7 +3664,7 @@
         "cost": 25.0,
         "energy": 6.384,
         "green_ratio": 0.7,
-        "compute_ms": 12.760542042087764,
+        "compute_ms": 12.017083005048335,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "海南": 0.0
@@ -3680,7 +3680,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 11.725332995411009,
+        "compute_ms": 11.955916997976601,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新疆": 0.0
@@ -3696,7 +3696,7 @@
         "cost": 32.0,
         "energy": 8.512,
         "green_ratio": 0.6,
-        "compute_ms": 11.670875013805926,
+        "compute_ms": 12.371584016364068,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "香港": 0.0
@@ -3712,7 +3712,7 @@
         "cost": 42.75,
         "energy": 11.34,
         "green_ratio": 0.7,
-        "compute_ms": 11.899416975211352,
+        "compute_ms": 12.832334032282233,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "海南": 0.0
@@ -3728,7 +3728,7 @@
         "cost": 9.2,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 11.968959006480873,
+        "compute_ms": 12.091499986127019,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -3744,7 +3744,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.01637497916817665,
+        "compute_ms": 0.017041980754584074,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3758,7 +3758,7 @@
         "cost": 15.7,
         "energy": 3.584,
         "green_ratio": 0.65,
-        "compute_ms": 11.525167035870254,
+        "compute_ms": 12.489624961744994,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3774,7 +3774,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 11.833084048703313,
+        "compute_ms": 11.855249991640449,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -3790,7 +3790,7 @@
         "cost": 30.7,
         "energy": 8.064,
         "green_ratio": 0.65,
-        "compute_ms": 12.056040985044092,
+        "compute_ms": 11.77308295154944,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3806,7 +3806,7 @@
         "cost": 37.6,
         "energy": 16.5888,
         "green_ratio": 0.55,
-        "compute_ms": 11.728708981536329,
+        "compute_ms": 12.40012503694743,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -3822,7 +3822,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.015416997484862804,
+        "compute_ms": 0.018666964024305344,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3836,7 +3836,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.005208014044910669,
+        "compute_ms": 0.005417037755250931,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3850,7 +3850,7 @@
         "cost": 28.8,
         "energy": 7.616,
         "green_ratio": 0.65,
-        "compute_ms": 11.394583038054407,
+        "compute_ms": 12.245458026882261,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3866,7 +3866,7 @@
         "cost": 22.8,
         "energy": 3.8912,
         "green_ratio": 0.6,
-        "compute_ms": 12.062499998137355,
+        "compute_ms": 12.1701669995673,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "香港": 0.0
@@ -3882,7 +3882,7 @@
         "cost": 36.5,
         "energy": 8.9984,
         "green_ratio": 0.6,
-        "compute_ms": 12.084916001185775,
+        "compute_ms": 11.718666006345302,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "香港": 0.0
@@ -3898,7 +3898,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 11.564499989617616,
+        "compute_ms": 12.288417026866227,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3914,7 +3914,7 @@
         "cost": 26.0,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 11.406709032598883,
+        "compute_ms": 12.058750027790666,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -3930,7 +3930,7 @@
         "cost": 23.2,
         "energy": 9.6768,
         "green_ratio": 0.55,
-        "compute_ms": 13.382417033426464,
+        "compute_ms": 12.057790998369455,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -3946,7 +3946,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 11.967625003308058,
+        "compute_ms": 11.719041969627142,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3962,7 +3962,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.01487502595409751,
+        "compute_ms": 0.014542019926011562,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -3976,7 +3976,7 @@
         "cost": 30.0,
         "energy": 7.84,
         "green_ratio": 0.65,
-        "compute_ms": 11.712374980561435,
+        "compute_ms": 12.039124965667725,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "新加坡": 0.0
@@ -3992,7 +3992,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.005874957423657179,
+        "compute_ms": 0.0075830030255019665,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -4006,7 +4006,7 @@
         "cost": 15.25,
         "energy": 2.94,
         "green_ratio": 0.7,
-        "compute_ms": 11.829082970507443,
+        "compute_ms": 12.034540995955467,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "海南": 0.0
@@ -4022,7 +4022,7 @@
         "cost": 52.0,
         "energy": 14.592,
         "green_ratio": 0.6,
-        "compute_ms": 11.650583008304238,
+        "compute_ms": 14.546333986800164,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "香港": 0.0
@@ -4038,7 +4038,7 @@
         "cost": 26.4,
         "energy": 3.6864,
         "green_ratio": 0.55,
-        "compute_ms": 11.357125011272728,
+        "compute_ms": 11.812375043518841,
         "reason": "可行性受限遗传算法搜索最优可行节点",
         "scores": {
           "重庆": 0.0
@@ -4054,7 +4054,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006166985258460045,
+        "compute_ms": 0.0077500008046627045,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -4068,7 +4068,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.002708984538912773,
+        "compute_ms": 0.002666027285158634,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0,
@@ -4085,7 +4085,7 @@
         "cost": 27.0,
         "energy": 6.72,
         "green_ratio": 0.7,
-        "compute_ms": 0.03766699228435755,
+        "compute_ms": 0.034833967220038176,
         "reason": "动态权重多目标最优：Score=0.0748 (S(t)=1.887, lat=48.0ms, cost=27.00, energy=6.720, load=0.00)",
         "scores": {
           "海南": 0.074825,
@@ -4105,7 +4105,7 @@
         "cost": 11.25,
         "energy": 1.26,
         "green_ratio": 0.85,
-        "compute_ms": 0.021208019461482763,
+        "compute_ms": 0.020957959350198507,
         "reason": "动态权重多目标最优：Score=0.0000 (S(t)=0.951, lat=87.7ms, cost=11.25, energy=1.260, load=0.00)",
         "scores": {
           "新疆": 0.0,
@@ -4123,7 +4123,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.014291959814727306,
+        "compute_ms": 0.010207993909716606,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4137,7 +4137,7 @@
         "cost": 25.0,
         "energy": 6.384,
         "green_ratio": 0.7,
-        "compute_ms": 0.025874993298202753,
+        "compute_ms": 0.023457978386431932,
         "reason": "动态权重多目标最优：Score=0.1088 (S(t)=1.728, lat=46.2ms, cost=25.00, energy=6.384, load=0.33)",
         "scores": {
           "海南": 0.108788,
@@ -4157,7 +4157,7 @@
         "cost": 15.9,
         "energy": 1.512,
         "green_ratio": 0.85,
-        "compute_ms": 0.017291982658207417,
+        "compute_ms": 0.017916958313435316,
         "reason": "动态权重多目标最优：Score=0.0250 (S(t)=0.826, lat=94.5ms, cost=15.90, energy=1.512, load=0.25)",
         "scores": {
           "新疆": 0.025
@@ -4173,7 +4173,7 @@
         "cost": 32.0,
         "energy": 8.512,
         "green_ratio": 0.6,
-        "compute_ms": 0.013375014532357454,
+        "compute_ms": 0.012708012945950031,
         "reason": "动态权重多目标最优：Score=0.1000 (S(t)=1.467, lat=45.7ms, cost=32.00, energy=8.512, load=0.00)",
         "scores": {
           "香港": 0.1,
@@ -4190,7 +4190,7 @@
         "cost": 34.2,
         "energy": 15.552,
         "green_ratio": 0.55,
-        "compute_ms": 0.017915968783199787,
+        "compute_ms": 0.017874990589916706,
         "reason": "动态权重多目标最优：Score=0.0471 (S(t)=2.062, lat=58.2ms, cost=34.20, energy=15.552, load=0.00)",
         "scores": {
           "重庆": 0.047073,
@@ -4208,7 +4208,7 @@
         "cost": 11.5,
         "energy": 2.52,
         "green_ratio": 0.7,
-        "compute_ms": 0.025374989490956068,
+        "compute_ms": 0.023833999875932932,
         "reason": "动态权重多目标最优：Score=0.1391 (S(t)=0.654, lat=38.0ms, cost=11.50, energy=2.520, load=0.67)",
         "scores": {
           "海南": 0.139053,
@@ -4228,7 +4228,7 @@
         "cost": 24.0,
         "energy": 2.88,
         "green_ratio": 0.85,
-        "compute_ms": 0.01491600414738059,
+        "compute_ms": 0.013624958228319883,
         "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.282, lat=99.3ms, cost=24.00, energy=2.880, load=0.50)",
         "scores": {
           "新疆": 0.05
@@ -4244,7 +4244,7 @@
         "cost": 15.7,
         "energy": 3.584,
         "green_ratio": 0.65,
-        "compute_ms": 0.02116599353030324,
+        "compute_ms": 0.019875005818903446,
         "reason": "动态权重多目标最优：Score=0.0745 (S(t)=1.825, lat=33.4ms, cost=15.70, energy=3.584, load=0.00)",
         "scores": {
           "新加坡": 0.074468,
@@ -4263,7 +4263,7 @@
         "cost": 21.6,
         "energy": 9.216,
         "green_ratio": 0.55,
-        "compute_ms": 0.016790989320725203,
+        "compute_ms": 0.027166970539838076,
         "reason": "动态权重多目标最优：Score=0.1425 (S(t)=1.649, lat=51.6ms, cost=21.60, energy=9.216, load=0.30)",
         "scores": {
           "重庆": 0.14254,
@@ -4281,7 +4281,7 @@
         "cost": 30.7,
         "energy": 8.064,
         "green_ratio": 0.65,
-        "compute_ms": 0.015208031982183456,
+        "compute_ms": 0.012208009138703346,
         "reason": "动态权重多目标最优：Score=0.0083 (S(t)=1.278, lat=38.8ms, cost=30.70, energy=8.064, load=0.08)",
         "scores": {
           "新加坡": 0.008333,
@@ -4298,7 +4298,7 @@
         "cost": 37.6,
         "energy": 16.5888,
         "green_ratio": 0.55,
-        "compute_ms": 0.014290970284491777,
+        "compute_ms": 0.012375006917864084,
         "reason": "动态权重多目标最优：Score=0.0500 (S(t)=1.697, lat=61.0ms, cost=37.60, energy=16.589, load=0.50)",
         "scores": {
           "重庆": 0.05
@@ -4314,7 +4314,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.00891595846042037,
+        "compute_ms": 0.008165952749550343,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4328,7 +4328,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.024457986000925303,
+        "compute_ms": 0.006249989382922649,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4342,7 +4342,7 @@
         "cost": 28.8,
         "energy": 7.616,
         "green_ratio": 0.65,
-        "compute_ms": 0.01795799471437931,
+        "compute_ms": 0.01637497916817665,
         "reason": "动态权重多目标最优：Score=0.0250 (S(t)=1.651, lat=37.6ms, cost=28.80, energy=7.616, load=0.25)",
         "scores": {
           "新加坡": 0.025,
@@ -4360,7 +4360,7 @@
         "cost": 14.0,
         "energy": 2.688,
         "green_ratio": 0.7,
-        "compute_ms": 0.018708000425249338,
+        "compute_ms": 0.017000013031065464,
         "reason": "动态权重多目标最优：Score=0.1075 (S(t)=0.763, lat=40.8ms, cost=14.00, energy=2.688, load=0.83)",
         "scores": {
           "海南": 0.107471,
@@ -4378,7 +4378,7 @@
         "cost": 36.5,
         "energy": 8.9984,
         "green_ratio": 0.6,
-        "compute_ms": 0.023917004000395536,
+        "compute_ms": 0.011958007235080004,
         "reason": "动态权重多目标最优：Score=0.1250 (S(t)=1.375, lat=48.5ms, cost=36.50, energy=8.998, load=0.25)",
         "scores": {
           "香港": 0.125,
@@ -4395,7 +4395,7 @@
         "cost": 58.3,
         "energy": 15.456,
         "green_ratio": 0.65,
-        "compute_ms": 0.0191659783013165,
+        "compute_ms": 0.015208963304758072,
         "reason": "动态权重多目标最优：Score=0.0417 (S(t)=1.837, lat=49.4ms, cost=58.30, energy=15.456, load=0.42)",
         "scores": {
           "新加坡": 0.041667,
@@ -4412,7 +4412,7 @@
         "cost": 26.0,
         "energy": 3.456,
         "green_ratio": 0.55,
-        "compute_ms": 0.014666991773992777,
+        "compute_ms": 0.012249976862221956,
         "reason": "动态权重多目标最优：Score=0.0800 (S(t)=0.937, lat=125.7ms, cost=26.00, energy=3.456, load=0.80)",
         "scores": {
           "重庆": 0.08
@@ -4428,7 +4428,7 @@
         "cost": 42.8,
         "energy": 10.2144,
         "green_ratio": 0.6,
-        "compute_ms": 0.09204103844240308,
+        "compute_ms": 0.012375006917864084,
         "reason": "动态权重多目标最优：Score=0.1500 (S(t)=1.662, lat=52.5ms, cost=42.80, energy=10.214, load=0.50)",
         "scores": {
           "香港": 0.15,
@@ -4445,7 +4445,7 @@
         "cost": 13.3,
         "energy": 3.136,
         "green_ratio": 0.65,
-        "compute_ms": 0.02258300082758069,
+        "compute_ms": 0.015458033885806799,
         "reason": "动态权重多目标最优：Score=0.0667 (S(t)=1.927, lat=31.0ms, cost=13.30, energy=3.136, load=0.67)",
         "scores": {
           "新加坡": 0.066667,
@@ -4463,7 +4463,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0070829992182552814,
+        "compute_ms": 0.005375011824071407,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4477,7 +4477,7 @@
         "cost": 30.0,
         "energy": 7.84,
         "green_ratio": 0.65,
-        "compute_ms": 0.015249999705702066,
+        "compute_ms": 0.0118750031106174,
         "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.188, lat=38.4ms, cost=30.00, energy=7.840, load=0.75)",
         "scores": {
           "新加坡": 0.075,
@@ -4494,7 +4494,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.003334018401801586,
+        "compute_ms": 0.002374988980591297,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4508,7 +4508,7 @@
         "cost": 12.2,
         "energy": 4.032,
         "green_ratio": 0.55,
-        "compute_ms": 0.019499973859637976,
+        "compute_ms": 0.02566596958786249,
         "reason": "动态权重多目标最优：Score=0.1702 (S(t)=0.779, lat=46.2ms, cost=12.20, energy=4.032, load=0.90)",
         "scores": {
           "重庆": 0.170217,
@@ -4526,7 +4526,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0024999608285725117,
+        "compute_ms": 0.002500019036233425,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4540,7 +4540,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.006208021659404039,
+        "compute_ms": 0.005542009603232145,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0
@@ -4554,7 +4554,7 @@
         "cost": 36.0,
         "energy": 9.2416,
         "green_ratio": 0.6,
-        "compute_ms": 0.010417017620056868,
+        "compute_ms": 0.009624985978007317,
         "reason": "动态权重多目标最优：Score=0.0750 (S(t)=1.767, lat=48.2ms, cost=36.00, energy=9.242, load=0.75)",
         "scores": {
           "香港": 0.075
@@ -4570,7 +4570,7 @@
         "cost": null,
         "energy": null,
         "green_ratio": null,
-        "compute_ms": 0.0026249908842146397,
+        "compute_ms": 0.002500019036233425,
         "reason": "无满足硬约束的候选节点",
         "scores": {},
         "s_t": 1.0

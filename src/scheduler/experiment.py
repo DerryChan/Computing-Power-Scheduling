@@ -9,7 +9,7 @@ from typing import Any
 
 from .baselines import run_all_baselines
 from .model import NodeState, TaskSpec, make_paper_nodes
-from .paper_scheduler import LeaseManager, PaperScheduler
+from .adaptive_scheduler import LeaseManager, PaperScheduler
 
 # 任务到达间隔：短于多数任务 runtime，制造资源争用
 INTERARRIVAL_H = 0.08
@@ -83,7 +83,7 @@ def build_paper_tasks(seed: int = 20260812) -> list[TaskSpec]:
 
 def cold_start_infeasibility(tasks: list[TaskSpec]) -> dict[str, str]:
     """空集群硬约束下即不可行的任务（与运行期争用无关）。"""
-    from .paper_scheduler import hard_filter
+    from .adaptive_scheduler import hard_filter
 
     out: dict[str, str] = {}
     nodes = make_paper_nodes()

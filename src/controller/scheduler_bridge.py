@@ -25,7 +25,7 @@ from scheduler.model import (  # noqa: E402
     TaskSpec,
     make_paper_nodes,
 )
-from scheduler.paper_scheduler import PaperScheduler, schedule_decision  # noqa: E402
+from scheduler.adaptive_scheduler import PaperScheduler, schedule_decision  # noqa: E402
 
 REAL_REGIONS = ("海南", "重庆")
 
@@ -156,7 +156,7 @@ def choose_with_paper(
         decision = schedule_decision(task, pool, check_memory=True, allocate=False)
         if decision.selected != "海南" and "海南" in decision.accepted:
             # 强制海南
-            from scheduler.paper_scheduler import hard_filter
+            from scheduler.adaptive_scheduler import hard_filter
 
             accepted, rejected, metrics = hard_filter(task, pool, check_memory=True)
             if "海南" in accepted:

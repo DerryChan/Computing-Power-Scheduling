@@ -29,13 +29,12 @@ Score_i = wl * S(t) * N_latency + wc * N_cost + we * N_energy + wld * Load_i
 ## 目录结构
 
 ```
-docs/                 PoC 测试实施方案
 src/
-  scheduler/          调度核心、基线、30 任务实验
-  controller/         控制面 API + UI（利用率峰值 / 收益面板）
-  agent/              海南、重庆 node agent（ResNet 后可短时占卡）
-  poc_bundle/         ResNet 推理与汇聚
-reports/              测试报告、图表、实验数据
+  scheduler/          调度核心（adaptive_scheduler）、基线、30 任务实验
+  controller/         控制面 API + UI
+  agent/              海南、重庆 node agent
+  poc_bundle/         ResNet 推理 / 占卡 / 汇聚
+reports/              当前最终测试报告、图表、实验数据
 scripts/              generate_report.py
 tests/                单元测试
 ```
@@ -50,14 +49,14 @@ PYTHONPATH=src python3 -m unittest tests.test_scheduler -v
 PYTHONPATH=src python3 -c "from scheduler.experiment import run_paper_experiment, assert_experiment_health; \
 p=run_paper_experiment('reports/data'); print(p['summaries']['本文方法（动态权重多目标调度）']); print(assert_experiment_health(p))"
 
-# 生成 Word 测试报告
+# 生成当前最终报告（算法 + 真实联调）
 python3 scripts/generate_report.py
 
 # 启动控制面（本地）
 cd src/controller && PYTHONPATH=.. SCHEDULER_FABRIC=hybrid python3 server.py
 ```
 
-正式报告：
+正式报告（由脚本重生，勿手改旧稿）：
 
 - `reports/跨境算力调度算法测试报告.docx`
 - `reports/跨境算力调度真实联调测试报告.docx`
@@ -70,9 +69,9 @@ cd src/controller && PYTHONPATH=.. SCHEDULER_FABRIC=hybrid python3 server.py
 | `POST /api/tasks` | 提交场景任务 |
 | `POST /api/reset` | 重置会话与峰值 |
 | `GET/POST /api/paper/experiment` | 跑/读取 30 任务对比实验 |
-| `GET /api/paper/nodes` | 五节点资源模型 |
+| `GET /api/paper/nodes` | 资源模型节点 |
 
-默认调度策略：`动态权重多目标`（兼容海南优先 / 最小延迟 / 最小成本等）。
+默认调度策略：`动态权重多目标`。
 
 ## 安全
 

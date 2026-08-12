@@ -254,7 +254,7 @@ def score_candidates(
     return metrics, s_t
 
 
-class PaperScheduler:
+class AdaptiveScheduler:
     """在线动态权重多目标调度器。"""
 
     def __init__(
@@ -366,5 +366,9 @@ def schedule_decision(
     check_memory: bool = False,
     allocate: bool = False,
 ) -> ScheduleDecision:
-    sched = PaperScheduler(nodes, weights, check_memory=check_memory, allocate=allocate)
+    sched = AdaptiveScheduler(nodes, weights, check_memory=check_memory, allocate=allocate)
     return sched.schedule(task)
+
+
+# 兼容旧导入名
+PaperScheduler = AdaptiveScheduler

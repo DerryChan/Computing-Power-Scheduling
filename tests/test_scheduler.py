@@ -20,7 +20,7 @@ from scheduler.experiment import (
     run_paper_experiment,
 )
 from scheduler.model import DEFAULT_WEIGHTS, TaskSpec, make_paper_nodes
-from scheduler.paper_scheduler import (
+from scheduler.adaptive_scheduler import (
     adaptive_sensitivity,
     compute_cost,
     compute_energy,

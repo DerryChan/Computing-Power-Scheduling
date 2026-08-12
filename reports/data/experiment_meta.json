@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T16:12:17",
+  "generated_at": "2026-08-12T18:07:57",
   "report": "跨境算力调度算法测试报告.docx",
   "summaries": {
     "静态本地": {
@@ -12,7 +12,7 @@
       "avg_energy": 6.9674,
       "gpu_util_pct": 62.5,
       "avg_green_pct": 65.71,
-      "avg_compute_ms": 0.018,
+      "avg_compute_ms": 0.0522,
       "distribution": {
         "重庆": 5,
         "新疆": 3,
@@ -47,7 +47,7 @@
       "avg_energy": 7.2589,
       "gpu_util_pct": 100.0,
       "avg_green_pct": 64.77,
-      "avg_compute_ms": 0.0129,
+      "avg_compute_ms": 0.0136,
       "distribution": {
         "重庆": 6,
         "新疆": 3,
@@ -76,7 +76,7 @@
       "avg_energy": 6.872,
       "gpu_util_pct": 95.0,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0136,
+      "avg_compute_ms": 0.0133,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -105,7 +105,7 @@
       "avg_energy": 7.4163,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.24,
-      "avg_compute_ms": 0.0148,
+      "avg_compute_ms": 0.0157,
       "distribution": {
         "重庆": 5,
         "新疆": 3,
@@ -135,7 +135,7 @@
       "avg_energy": 7.0039,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 64.77,
-      "avg_compute_ms": 11.8762,
+      "avg_compute_ms": 12.2547,
       "distribution": {
         "新疆": 3,
         "海南": 3,
@@ -164,7 +164,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0225,
+      "avg_compute_ms": 0.0175,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -195,7 +195,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0171,
+      "avg_compute_ms": 0.0191,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -224,7 +224,7 @@
       "avg_energy": 7.1566,
       "gpu_util_pct": 95.0,
       "avg_green_pct": 65.0,
-      "avg_compute_ms": 0.0154,
+      "avg_compute_ms": 0.0225,
       "distribution": {
         "新疆": 3,
         "海南": 3,
@@ -254,7 +254,7 @@
       "avg_energy": 7.0657,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0151,
+      "avg_compute_ms": 0.0154,
       "distribution": {
         "海南": 4,
         "新疆": 3,
@@ -312,7 +312,7 @@
       "avg_energy": 7.0669,
       "gpu_util_pct": 97.5,
       "avg_green_pct": 65.45,
-      "avg_compute_ms": 0.0152,
+      "avg_compute_ms": 0.0151,
       "distribution": {
         "海南": 4,
         "新疆": 3,

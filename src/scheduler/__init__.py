@@ -8,9 +8,10 @@ from .experiment import (
     run_paper_experiment,
 )
 from .model import DEFAULT_WEIGHTS, LinkSpec, NodeState, TaskSpec, make_paper_nodes
-from .paper_scheduler import PaperScheduler, schedule_decision
+from .adaptive_scheduler import AdaptiveScheduler, PaperScheduler, schedule_decision
 
 __all__ = [
+    "AdaptiveScheduler",
     "DEFAULT_WEIGHTS",
     "LinkSpec",
     "NodeState",
